@@ -23,6 +23,17 @@ body {
   
 }
 
+.Text2 {
+  max-width: 1500px;         /* Limits how wide the text can go */
+  margin: 20px;           /* Horizontally center the block */
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-top: 6rem;
+  
+}
+
 
 /*  BUTTONS ON PAGE ------------------------------------------------------------------- */
 .button-group {
@@ -43,6 +54,7 @@ body {
   border: none;
   border-radius: 50px; 
   cursor: pointer;
+  margin-top: 0.1rem;
 }
 
 /* allows clicking on button */
@@ -134,7 +146,7 @@ h1 {
   justify-content: center;
   gap: 5vw;
   flex-wrap: wrap;
-  margin-top: 0rem;
+  margin-top: -4.5rem;
   text-align: center;
 }
 
@@ -142,7 +154,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .column-title {
@@ -170,7 +182,7 @@ h1 {
 
 #code-block {
   background-color: #1a1a1a;
-  color: #33ff33;
+  color: #ffffff;
   padding: 20px;
   font-family: 'Times New Roman', Times, serif;
   border-radius: 10px;
