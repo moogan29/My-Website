@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Times New Roman", serif;
+  background-color: #1d4631;
+  color: white;
+  text-align: center;
+}
+
+/* INTRO ON HOMEPAGE above buttons and below main title*/
+.intro {
+  max-width: 1500px;         /* Limits how wide the text can go */
+  margin: 20px;           /* Horizontally center the block */
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  
+}
+
+
+/*  BUTTONS ON PAGE ------------------------------------------------------------------- */
+.button-group {
+  display: flex;
+  justify-content: center; /* Center them horizontally */
+  gap: 200px;               /* Space between buttons */
+  margin-top: 50px;
+}
+
+/* button function */
+.bttn {
+  text-decoration: none;
+  width: 600px;         /* Fixed width */
+  height: 150px;           /* Fixed height */  
+  padding: 10px 20px; 
+  background-color: #f5c518;
+  color: #1d4631;
+  border: none;
+  border-radius: 50px; 
+  cursor: pointer;
+}
+
+/* allows clicking on button */
+.bttn:hover {
+  background-color: #218838;
+}
+/* ----------------------------------------------------------------------------------- */
+
+
+/*  BACK BUTTON TO HOMEPAGE ---------------------------------------------------*/
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* or right: 20px; for top-right corner */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 12px;
+  background-color: #f1c40f;
+  color: #003d2d;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #e1b50e;
+}
+/* -------------------------------------------------------------------------------------- */
+
+
+
+/* removes the big gap from top of page and title. does for everything else */
+h1, .btn, .container {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/*  FOR THE WORD DOCUMENT TO VIEW ON PAGE AND DOWNLOAD */
+.doc-viewer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.doc-frame {
+  width: 100%;
+  height: 1200px;
+  border: 2px solid #1d4631;
+  border-radius: 0px;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #f1c40f;
+  color: #003d2d;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #e1b50e;
+}

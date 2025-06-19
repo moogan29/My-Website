@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Times New Roman", serif;
+  background-color: #1d4631;
+  color: white;
+  text-align: center;
+}
+
+/* INTRO ON HOMEPAGE above buttons and below main title*/
+.intro {
+  max-width: 1500px;         /* Limits how wide the text can go */
+  margin: 0 auto;           /* Horizontally center the block */
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+
+/*  BUTTONS TO OTHER PAGES ------------------------------------------------------------------- */
+.button-group {
+  display: flex;
+  justify-content: center; /* Center them horizontally */
+  gap: 200px;               /* Space between buttons */
+  margin-top: 50px;
+}
+
+/* button function */
+.bttn {
+  text-decoration: none;
+  width: 600px;         /* Fixed width */
+  height: 150px;           /* Fixed height */  
+  padding: 10px 20px; 
+  background-color: #f5c518;
+  color: #1d4631;
+  border: none;
+  border-radius: 50px; 
+  cursor: pointer;
+}
+
+/* allows clicking on button */
+.bttn:hover {
+  background-color: #218838;
+}
+/* ----------------------------------------------------------------------------------- */
+
+
+
+
+
+/* removes the big gap from top of page and title. does for everything else */
+h1, .btn, .container {
+  margin: 0;
+  padding: 0;
+}
+
