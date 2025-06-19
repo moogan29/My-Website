@@ -13,7 +13,7 @@ body {
 }
 
 /* INTRO ON HOMEPAGE above buttons and below main title*/
-.intro {
+.Text {
   max-width: 1500px;         /* Limits how wide the text can go */
   margin: 20px;           /* Horizontally center the block */
   padding: 10px 20px;
@@ -74,9 +74,21 @@ body {
 
 
 /* removes the big gap from top of page and title. does for everything else */
-h1, .btn, .container {
+h1, .bTtn, .container {
+  width: 80%;
   margin: 0;
-  padding: 0;
+  font-size: 2vw;
+  padding: 2vh;
+  text-align: center;
+}
+
+
+
+/*  adapting sizes to window size */
+h1 {
+  font-size: clamp(3rem, 8vw, 6rem); /* Responsive headline */
+  text-align: center;
+  margin: 0 auto;
 }
 
 
@@ -89,6 +101,7 @@ h1, .btn, .container {
   text-align: center;
 }
 
+/* presenting the pdf in the window itself */
 .doc-frame {
   width: 100%;
   height: 1200px;
@@ -96,6 +109,7 @@ h1, .btn, .container {
   border-radius: 0px;
 }
 
+/* download buttons under the pdf */
 .download-button {
   display: inline-block;
   margin-top: 15px;
@@ -110,4 +124,82 @@ h1, .btn, .container {
 
 .download-button:hover {
   background-color: #e1b50e;
+}
+
+
+
+/* XY AND BLOCH SPHERE BUTTONS AND TITLES */
+.XY-BLOCH-columns-container {
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  flex-wrap: wrap;
+  margin-top: 0rem;
+  text-align: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.column-title {
+  font-size: clamp(3rem, 4vw, 3rem);
+  border-bottom: 5px solid white;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+}
+
+/* Optional: make buttons smaller for this layout */
+.column .bttn {
+  width: 300px;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.code-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 40px;
+}
+
+
+#code-block {
+  background-color: #1a1a1a;
+  color: #33ff33;
+  padding: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 40px 0 40px 40px;
+  height: 600px;              /* fixed height box */
+  overflow-y: auto;           /* enable vertical scroll */
+  overflow-x: auto;           /* enable horizontal scroll if needed */
+  white-space: pre-wrap;      /* wrap lines nicely */
+  box-shadow: 0 0 10px #000;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.side-text {
+  color: white;
+  font-size: 1.5rem;
+  padding-top: 20px;
+}
+
+
+.code-download-button {
+  display: inline-block;
+  margin: 20px 0 0 40px;
+  padding: 10px 20px;
+  background-color: #f1c40f;
+  color: #003d2d;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s;
 }

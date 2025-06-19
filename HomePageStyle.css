@@ -55,8 +55,18 @@ body {
 
 
 /* removes the big gap from top of page and title. does for everything else */
-h1, .btn, .container {
+h1, .bttn, .container, .button-group {
+  width: 100%;
   margin: 0;
-  padding: 0;
+  font-size: 2vw;
+  padding: 2vh;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 6rem); /* Responsive headline */
+}
+
+a, p, h2, h3, .bttn {
+  font-size: clamp(1rem, 4vw, 6rem); /* Responsive body/subheading */
 }
 

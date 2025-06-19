@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>QSPS Page</title>
+  <link rel="stylesheet" href="QSPSPageStyle.css"> 
+</head>
+
+
+<!-- gets title, images and code into variables -->
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const folder = params.get('folder');
+
+      const imageCounts = {
+        'Probability of Excited State (init1)': 18,
+        'Probability of Excited State (neg_i_state)': 18,
+        'Probability of Excited State (neg_state)': 18,
+        'Bloch Sphere Hamiltonian-X driven Rabi Oscillations': 6,
+        'Bloch Sphere Hamiltonian-Y driven Rabi Oscillations': 6,
+        'Bloch Sphere Hamiltonian-Z driven Rabi Oscillations': 6,
+        // add more folders as needed
+      };
+
+      const titles = {
+        'Probability of Excited State (init1)': "Probability of Excited State |1> (init1) ",
+        'Probability of Excited State (neg_state)':  "Probability of Excited State |-> (neg_state) ",
+        'Probability of Excited State (neg_i_state)': "Probability of Excited State |-i> (neg_i_state) ",
+        'Bloch Sphere Hamiltonian-X driven Rabi Oscillations': "Bloch Sphere Hamiltonian-X driven Rabi Oscillations",
+        'Bloch Sphere Hamiltonian-Y driven Rabi Oscillations': "Bloch Sphere Hamiltonian-Y driven Rabi Oscillations",
+        'Bloch Sphere Hamiltonian-Z driven Rabi Oscillations': "Bloch Sphere Hamiltonian-Z driven Rabi Oscillations",
+        'Bloch Sphere 6-single Qubits': "Bloch Sphere 6-single Qubits",
+      };
+
+      const count = imageCounts[folder] || 0;
+      const title = titles[folder] || "Results";
+
+      document.getElementById('title').innerText = title;
+
+      const gallery = document.getElementById('image-gallery');
+
+      for (let i = 1; i <= count; i++) {
+        const img = document.createElement('img');
+        img.src = `${folder}/graph${i}.png`;
+        img.alt = `${folder} image ${i}`;
+        img.style.width = "100%";
+        img.style.maxWidth = "800px";
+        img.style.margin = "20px 0";
+        gallery.appendChild(img);
+      }
+
+
+    //   Probability of Excited State (neg_i_state)
+    // fetch('${folder}/${folder}.py')
+    fetch(`${folder}/${folder}.py`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('code-block').textContent = data;
+
+            // Dynamically update the download link
+            const pyPath = `${folder}/${folder}.py`;
+            document.getElementById('code-download').href = pyPath;
+        });
+
+
+
+
+    });
+  </script>
+
+
+<body>
+
+<a href="QSPS.html" class="back-button">← Back</a>
+
+<h1 id="title"></h1>
+
+<div class="code-layout">
+
+  <pre id="code-block"></pre>
+
+  <div class="side-text">
+
+    <h2>This is one of my program results, that is explain extensively in the essay</h2>
+
+  </div>
+
+</div>
+
+<a id="code-download" class="code-download-button" download>Download .py</a>
+
+<div id="image-gallery"></div>
+
+
+</body>
