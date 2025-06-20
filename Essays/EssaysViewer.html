@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>QSPS Page</title>
+  <link rel="stylesheet" href="EssaysPageStyle.css"> 
+</head>
+
+
+<!-- gets title, images and code into variables -->
+<script>
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const folder = params.get('folder');
+
+    const titles = {
+      'Big Data and ML Essay': "Big Data and Machine Learning Essay (Titanic Dataset)",
+      'DPA 2018 Essay':  "DPA 2018 Essay",
+      'Vaccine Ethics Poster': "Vaccine Ethics Poster",
+      'Hypothetical Ethical Analysis': "Hypothetical Ethical Analysis",
+      'FIS Report': "FIS Report",
+    };
+
+    const title = titles[folder] || "Results";
+    document.getElementById('title').innerText = title;
+
+
+
+    const folderPath = `Files/${folder}`;
+    const pdfPath = `${folderPath}/${folder}.pdf`;
+    const docxPath = `${folderPath}/${folder}.docx`;
+
+    document.getElementById('pdf-frame').src = pdfPath;
+
+    document.getElementById('word-link').href = docxPath;
+    document.getElementById('word-link').innerText = "Download Word Document";
+    
+    document.getElementById('pdf-link').href = pdfPath;
+    document.getElementById('pdf-link').innerText = "Download PDF Document";
+  });
+
+</script>
+
+
+<body>
+
+<a href="Essays.html" class="back-button">← Back</a>
+
+<h1 id="title"></h1>
+
+<div class="doc-viewer">
+  <iframe id="pdf-frame" class="doc-frame"></iframe>
+  <a id="word-link" class="download-button" target="_blank">Download Word Document</a>
+  <a id="pdf-link" class="download-button" target="_blank" download>Download PDF Document</a>
+</div>
+
+</body>
