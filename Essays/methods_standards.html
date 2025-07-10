@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>QSPS Page</title>
+  <link rel="stylesheet" href="EssaysPageStyle.css"> 
+</head>
+
+<style>
+    .accordion-content {
+      display: none;
+      margin: 0 0 1em 0;
+      padding: 1em;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    .accordion-button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 1em;
+      font-size: 1.1em;
+      background: #eee;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 0.2em;
+    }
+    .accordion-button.active {
+      background: #d0eaff;
+    }
+  </style>
+
+
+<!-- gets title, images and code into variables -->
+<script>
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const folder = params.get('folder');
+
+    const folderPathPart1 = `Files/${folder}/Part 1 - Diagrammatic Presentation`;
+    const folderPathPart2 = `Files/${folder}/Part 2 - Case Study`;
+    const folderPathPart3 = `Files/${folder}/Part 3 - Structured Application`;
+
+
+ // PART 1 - Diagrammatic Presentation
+    const chatbotpdf = `${folderPathPart1}/AI chatbot.pdf`;
+    const chatbotdocx = `${folderPathPart1}/AI chatbot.docx`;
+
+    const Diagrammaticpdf = `${folderPathPart1}/Digramatic Representation.pdf`;
+    const Diagrammaticdocx = `${folderPathPart1}/Digramatic Representation 2.docx`;
+
+    const Mobilepdf = `${folderPathPart1}/Mobile Banking app.pdf`;
+    const Mobiledocx = `${folderPathPart1}/Mobile Banking app.docx`;
+
+    const RPApdf = `${folderPathPart1}/RPA System.pdf`;
+    const RPAdocx = `${folderPathPart1}/RPA System.docx`;
+
+    const ZeroTrustpdf = `${folderPathPart1}/Zero Trust Diagram.pdf`;
+    const ZeroTrustdocx = `${folderPathPart1}/Zero Trust Diagram.docx`;
+
+    document.getElementById('chatbotpdf').src = chatbotpdf;
+    document.getElementById('chatbotdocx').href = chatbotdocx;
+
+    document.getElementById('Diagrammaticpdf').src = Diagrammaticpdf;
+    document.getElementById('Diagrammaticdocx').href = Diagrammaticdocx;
+
+    document.getElementById('Mobilepdf').src = Mobilepdf;
+    document.getElementById('Mobiledocx').href = Mobiledocx;
+
+    document.getElementById('RPApdf').src = RPApdf;
+    document.getElementById('RPAdocx').href = RPAdocx;
+
+    document.getElementById('ZeroTrustpdf').src = ZeroTrustpdf;
+    document.getElementById('ZeroTrustdocx').href = ZeroTrustdocx;
+
+
+
+    // FOR PART 2
+    const CaseStudypdf = `${folderPathPart2}/CASE STUDY ANALYSIS.pdf`;
+    const CaseStudydocx = `${folderPathPart2}/CASE STUDY ANALYSIS.docx`;
+
+    document.getElementById('CaseStudypdf').src = CaseStudypdf;
+    document.getElementById('CaseStudydocx').href = CaseStudydocx;
+  
+    /*pdfFiles.forEach(file => {
+    const link = document.createElement('a');
+    link.href = `Files/${encodeURIComponent(folder)}/Part 1 - Diagrammatic Presentation/${encodeURIComponent(file)}`;
+    link.innerText = `Download ${file}`;
+    link.className = 'download-button';
+    link.target = '_blank';
+    document.getElementById('pdf-links-container').appendChild(link);
+    }); */
+
+
+   /* document.getElementById('pdf-frame').src = pdfPath;
+
+    document.getElementById('word-link').href = docxPath;
+    document.getElementById('word-link').innerText = "Download Word Document";
+    
+    document.getElementById('pdf-link').href = pdfPath;
+    document.getElementById('pdf-link').innerText = "Download PDF Document"; 
+    
+
+    <div class="doc-viewer">
+  <iframe id="pdf-frame class="doc-frame"></iframe>
+  <a id="word-link" class="download-button" target="_blank">Download Word Document</a>
+  <a id="pdf-link" class="download-button" target="_blank" download>Download PDF Document</a>
+</div>
+
+<div id="pdf-links-container"></div>
+
+*/
+  });
+
+</script>
+
+
+
+<body>
+
+<a href="Essays.html" class="back-button">← Back</a>
+
+<h1>Software Development: Methods and Standards</h1>
+
+<h2>This project involved the development of three distinct software solutions for a single banking company. The three components of the project were: an AI-powered chatbot, a mobile banking application, and an RPA (Robotic Process Automation) system.
+
+The project is divided into three main parts:</h2>
+
+
+<button class="accordion-button" data-target="section1">Part 1</button>
+<div id="section1" class="accordion-content">
+
+  <iframe id="chatbotpdf" class="doc-frame"></iframe>
+  <a id="chatbotdocx" class="download-button" download>Download .docx version</a>
+
+  <iframe id="Diagrammaticpdf" class="doc-frame"></iframe>
+  <a id="Diagrammaticdocx" class="download-button" download>Download .docx version</a>
+
+  <iframe id="Mobilepdf" class="doc-frame"></iframe>
+  <a id="Mobiledocx" class="download-button" download>Download .docx version</a>
+
+  <iframe id="RPApdf" class="doc-frame"></iframe>
+  <a id="RPAdocx" class="download-button" download>Download .docx version</a>
+
+  <iframe id="ZeroTrustpdf" class="doc-frame"></iframe>
+  <a id="ZeroTrustdocx" class="download-button" download>Download .docx version</a>
+
+</div>
+
+
+
+
+<button class="accordion-button" data-target="section2">Part 2</button>
+<div id="section2" class="accordion-content">
+  
+  <iframe id="CaseStudypdf" class="doc-frame"></iframe>
+  <a id="CaseStudydocx" class="download-button" download>Download .docx version</a>
+
+</div>
+
+
+
+<button class="accordion-button" data-target="section3">RPA System</button>
+<div id="section3" class="accordion-content">
+  <p>Content for RPA System goes here.</p>
+</div>
+
+<script>
+  document.querySelectorAll('.accordion-button').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const target = document.getElementById(this.dataset.target);
+      const isOpen = target.style.display === 'block';
+      // Close all
+      document.querySelectorAll('.accordion-content').forEach(div => div.style.display = 'none');
+      document.querySelectorAll('.accordion-button').forEach(b => b.classList.remove('active'));
+      // Toggle current
+      if (!isOpen) {
+        target.style.display = 'block';
+        this.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
