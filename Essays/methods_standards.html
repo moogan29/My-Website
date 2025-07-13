@@ -34,7 +34,7 @@
 
 <!-- gets title, images and code into variables -->
 <script>
-
+/*
   window.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const folder = params.get('folder');
@@ -45,23 +45,25 @@
 
 
  // PART 1 - Diagrammatic Presentation
-    const chatbotpdf = `${folderPathPart1}/AI chatbot.pdf`;
-    const chatbotdocx = `${folderPathPart1}/AI chatbot.docx`;
+   
+    const Diagrammaticpdf = `${folderPathPart1}/Diagrammatic Representation.pdf`;
+    const Diagrammaticdocx = `${folderPathPart1}/Diagrammatic Representation.docx`;
 
-    const Diagrammaticpdf = `${folderPathPart1}/Diagramatic Representation.pdf`;
-    const Diagrammaticdocx = `${folderPathPart1}/Diagramatic Representation.docx`;
+    const Chatbotpdf = `${folderPathPart1}/${encodeURIComponent('AI chatbot.pdf')}`;
+    const Chatbotdocx = `${folderPathPart1}/${encodeURIComponent('AI chatbot.docx')}`;
 
-    const Mobilepdf = `${folderPathPart1}/Mobile Banking app.pdf`;
-    const Mobiledocx = `${folderPathPart1}/Mobile Banking app.docx`;
+    const Mobilepdf = `${folderPathPart1}/${encodeURIComponent('Mobile Banking app.pdf')}`;
+    const Mobiledocx = `${folderPathPart1}/${encodeURIComponent('Mobile Banking app.docx')}`;
 
-    const RPApdf = `${folderPathPart1}/RPA System.pdf`;
-    const RPAdocx = `${folderPathPart1}/RPA System.docx`;
+    const RPApdf = `${folderPathPart1}/${encodeURIComponent('RPA System.pdf')}`;
+    const RPAdocx = `${folderPathPart1}/${encodeURIComponent('RPA System.docx')}`;
 
-    const ZeroTrustpdf = `${folderPathPart1}/Zero Trust Diagram.pdf`;
-    const ZeroTrustdocx = `${folderPathPart1}/Zero Trust Diagram.docx`;
+    const ZeroTrustpdf = `${folderPathPart1}/${encodeURIComponent('Zero Trust Diagram.pdf')}`;
+    const ZeroTrustdocx = `${folderPathPart1}/${encodeURIComponent('Zero Trust Diagram.docx')}`;
 
-    document.getElementById('chatbotpdf').src = chatbotpdf;
-    document.getElementById('chatbotdocx').href = chatbotdocx;
+
+    document.getElementById('Chatbotpdf').src = Chatbotpdf;
+    document.getElementById('Chatbotdocx').href = Chatbotdocx;
 
     document.getElementById('Diagrammaticpdf').src = Diagrammaticpdf;
     document.getElementById('Diagrammaticdocx').href = Diagrammaticdocx;
@@ -75,7 +77,10 @@
     document.getElementById('ZeroTrustpdf').src = ZeroTrustpdf;
     document.getElementById('ZeroTrustdocx').href = ZeroTrustdocx;
 
-
+console.log('Chatbotpdf:', Chatbotpdf);
+console.log('Mobilepdf:', Mobilepdf);
+console.log('RPApdf:', RPApdf);
+console.log('ZeroTrustpdf:', ZeroTrustpdf);
 
     // FOR PART 2
     const CaseStudypdf = `${folderPathPart2}/CASE STUDY ANALYSIS.pdf`;
@@ -112,7 +117,7 @@
 <div id="pdf-links-container"></div>
 
 */
-  });
+  
 
 </script>
 
@@ -124,37 +129,54 @@
 
 <h1>Software Development: Methods and Standards</h1>
 
-
-
 <button class="accordion-button" data-target="section1">Part 1 - Diagrammatic Presentation</button>
 <div id="section1" class="accordion-content">
 
-  <iframe id="chatbotpdf" class="doc-frame"></iframe>
-  <a id="chatbotdocx" class="download-button" download>Download .docx version</a>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; flex-wrap: wrap; gap: 2em; justify-content: center;">
+      <div style="flex: 1 1 45%; min-width: 300px; margin-bottom: 2.5em;">
+        <h2 style="color: black; text-align: center;">AI Chatbot</h2>
+        <iframe id="Chatbotpdf" class="doc-frame" title="AI Chatbot PDF Document"></iframe>
+        <a id="Chatbotdocx" class="download-button" download style="display: block; text-align: center;">Download .docx version</a>
+      </div>
 
-  <iframe id="Mobilepdf" class="doc-frame"></iframe>
-  <a id="Mobiledocx" class="download-button" download>Download .docx version</a>
+      <div style="flex: 1 1 45%; min-width: 300px; margin-bottom: 2.5em;">
+        <h2 style="color: black; text-align: center;">Mobile Banking App</h2>
+        <iframe id="Mobilepdf" class="doc-frame" title="Mobile Banking app PDF"></iframe>
+        <a id="Mobiledocx" class="download-button" download style="display: block; text-align: center;">Download .docx version</a>
+      </div>
 
-  <iframe id="RPApdf" class="doc-frame"></iframe>
-  <a id="RPAdocx" class="download-button" download>Download .docx version</a>
+      <div style="flex: 1 1 45%; min-width: 300px; margin-bottom: 2.5em;">
+        <h2 style="color: black; text-align: center;">RPA System</h2>
+        <iframe id="RPApdf" class="doc-frame" title="RPA System PDF Document"></iframe>
+        <a id="RPAdocx" class="download-button" download style="display: block; text-align: center;">Download .docx version</a>
+      </div>
 
-  <iframe id="ZeroTrustpdf" class="doc-frame"></iframe>
-  <a id="ZeroTrustdocx" class="download-button" download>Download .docx version</a>
-
-  
-  <a id="Diagrammaticdocx" class="download-button" download>Download .docx version</a>
+      <div style="flex: 1 1 45%; min-width: 300px; margin-bottom: 2.5em;">
+        <h2 style="color: black; text-align: center;">Zero Trust Diagram</h2>
+        <iframe id="ZeroTrustpdf" class="doc-frame" title="Zero Trust Diagram PDF Document"></iframe>
+        <a id="ZeroTrustdocx" class="download-button" download style="display: block; text-align: center;">Download .docx version</a>
+      </div>
+    </div>
+    <div style="margin-top: 2em; display: flex; justify-content: center; gap: 1em;">
+      <a id="Diagrammaticdocx" class="download-button" download style="text-align: center;">Download .docx version</a>
+      <a id="Diagrammaticpdf" class="download-button" download style="text-align: center;">Download .pdf version</a>
+    </div>
+    <p style="color: black; text-align: center;">If you want a Word document with all 4 diagrames and descriptions, please use the buttons above.</p>
+  </div>
 
 </div>
 
 
-
-
 <button class="accordion-button" data-target="section2">Part 2</button>
 <div id="section2" class="accordion-content">
-  
-  <iframe id="CaseStudypdf" class="doc-frame"></iframe>
-  <a id="CaseStudydocx" class="download-button" download>Download .docx version</a>
 
+  <div style="flex: 1 1 45%; min-width: 700px; margin-bottom: 2.5em;">
+        <h2 style="color: black; text-align: center;">Case Study Analysis</h2>
+        <iframe id="CaseStudypdf" class="doc-frame" title="Zero Trust Diagram PDF Document"></iframe>
+        <a id="CaseStudydocx" class="download-button" download style="display: block; text-align: center;">Download .docx version</a>
+  </div>
+  
 </div>
 
 
@@ -164,7 +186,57 @@
   <p>Content for RPA System goes here.</p>
 </div>
 
+
+
+
+
+
 <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const folder = params.get('folder');
+
+    const folderPathPart1 = `Files/${folder}/Part 1 - Diagrammatic Presentation`;
+    const folderPathPart2 = `Files/${folder}/Part 2  - Case Study`;
+    const folderPathPart3 = `Files/${folder}/Part 3 - Structured Application`;
+
+
+    // PART 1 - Diagrammatic Presentation
+    const DiagrammaticRepresentationpdf = `${folderPathPart1}/${encodeURIComponent('Diagrammatic Representation.pdf')}`;
+    const DiagrammaticRepresentationdocx = `${folderPathPart1}/${encodeURIComponent('Diagrammatic Representation.docx')}`;
+    const Chatbotpdf = `${folderPathPart1}/${encodeURIComponent('AI chatbot.pdf')}`;
+    const Chatbotdocx = `${folderPathPart1}/${encodeURIComponent('AI chatbot.docx')}`;
+    const Mobilepdf = `${folderPathPart1}/${encodeURIComponent('Mobile Banking app.pdf')}`;
+    const Mobiledocx = `${folderPathPart1}/${encodeURIComponent('Mobile Banking app.docx')}`;
+    const RPApdf = `${folderPathPart1}/${encodeURIComponent('RPA System.pdf')}`;
+    const RPAdocx = `${folderPathPart1}/${encodeURIComponent('RPA System.docx')}`;
+    const ZeroTrustpdf = `${folderPathPart1}/${encodeURIComponent('Zero Trust Diagram.pdf')}`;
+    const ZeroTrustdocx = `${folderPathPart1}/${encodeURIComponent('Zero Trust Diagram.docx')}`;
+
+    //document.getElementById('Diagrammaticpdf').src = DiagrammaticRepresentationpdf;
+    document.getElementById('Diagrammaticdocx').href = DiagrammaticRepresentationdocx
+    document.getElementById('Diagrammaticpdf').href = DiagrammaticRepresentationpdf
+    document.getElementById('Chatbotpdf').src = Chatbotpdf;
+    document.getElementById('Chatbotdocx').href = Chatbotdocx;
+    document.getElementById('Mobilepdf').src = Mobilepdf;
+    document.getElementById('Mobiledocx').href = Mobiledocx;
+    document.getElementById('RPApdf').src = RPApdf;
+    document.getElementById('RPAdocx').href = RPAdocx;
+    document.getElementById('ZeroTrustpdf').src = ZeroTrustpdf;
+    document.getElementById('ZeroTrustdocx').href = ZeroTrustdocx;
+
+    // FOR PART 2
+    const CaseStudypdf = `${folderPathPart2}/CASE STUDY ANALYSIS.pdf`;
+    const CaseStudydocx = `${folderPathPart2}/CASE STUDY ANALYSIS.docx`;
+    document.getElementById('CaseStudypdf').src = CaseStudypdf;
+    document.getElementById('CaseStudydocx').href = CaseStudydocx;
+
+    console.log('Chatbotpdf:', Chatbotpdf);
+    console.log('Mobilepdf:', Mobilepdf);
+    console.log('RPApdf:', RPApdf);
+    console.log('ZeroTrustpdf:', ZeroTrustpdf);
+  });
+
   document.querySelectorAll('.accordion-button').forEach(btn => {
     btn.addEventListener('click', function() {
       const target = document.getElementById(this.dataset.target);
