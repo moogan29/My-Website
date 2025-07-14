@@ -1,37 +1,79 @@
 body {
   margin: 0;
-  padding: 0;
-  /* height: 100vh; */
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #003d2d;
+  color: #003d2d;
+}
+
+header {
+  background: #003d2d;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
-  font-family: "Times New Roman", serif;
-  background-color: #1d4631;
-  color: white;
-  text-align: center;
 }
 
-/* INTRO ON HOMEPAGE above buttons and below main title*/
-.intro {
-  max-width: 1500px;         /* Limits how wide the text can go */
-  margin: 0 auto;           /* Horizontally center the block */
-  padding: 10px 20px;
-  text-align: center;
+.logo {
+  font-weight: bold;
   font-size: 1.2rem;
-  line-height: 1.5;
 }
 
-
-/*  BUTTONS TO OTHER PAGES ------------------------------------------------------------------- */
-.button-group {
+.nav-links {
+  list-style: none;
   display: flex;
-  justify-content: center; /* Center them horizontally */
-  gap: 200px;               /* Space between buttons */
-  margin-top: 50px;
+  gap: 1.5rem;
 }
 
-/* button function */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #ffffff, #f1c40f);
+  background-color: #ffffff;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #f1c40f;
+  color: #003d2d;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  font-weight: bold;
+}
+
+.hero-image img {
+  max-width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
 .bttn {
   text-decoration: none;
   width: 600px;         /* Fixed width */
@@ -43,30 +85,3 @@ body {
   border-radius: 50px; 
   cursor: pointer;
 }
-
-/* allows clicking on button */
-.bttn:hover {
-  background-color: #218838;
-}
-/* ----------------------------------------------------------------------------------- */
-
-
-
-
-
-/* removes the big gap from top of page and title. does for everything else */
-h1, .bttn, .container, .button-group {
-  width: 100%;
-  margin: 0;
-  font-size: 2vw;
-  padding: 2vh;
-}
-
-h1 {
-  font-size: clamp(2rem, 8vw, 6rem); /* Responsive headline */
-}
-
-a, p, h2, h3, .bttn {
-  font-size: clamp(1rem, 4vw, 6rem); /* Responsive body/subheading */
-}
-
