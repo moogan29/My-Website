@@ -32,95 +32,6 @@
   </style>
 
 
-<!-- gets title, images and code into variables -->
-<script>
-/*
-  window.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const folder = params.get('folder');
-
-    const folderPathPart1 = `Files/${folder}/Part 1 - Diagrammatic Presentation`;
-    const folderPathPart2 = `Files/${folder}/Part 2  - Case Study`;
-    const folderPathPart3 = `Files/${folder}/Part 3 - Structured Application`;
-
-
- // PART 1 - Diagrammatic Presentation
-   
-    const Diagrammaticpdf = `${folderPathPart1}/Diagrammatic Representation.pdf`;
-    const Diagrammaticdocx = `${folderPathPart1}/Diagrammatic Representation.docx`;
-
-    const Chatbotpdf = `${folderPathPart1}/${encodeURIComponent('AI chatbot.pdf')}`;
-    const Chatbotdocx = `${folderPathPart1}/${encodeURIComponent('AI chatbot.docx')}`;
-
-    const Mobilepdf = `${folderPathPart1}/${encodeURIComponent('Mobile Banking app.pdf')}`;
-    const Mobiledocx = `${folderPathPart1}/${encodeURIComponent('Mobile Banking app.docx')}`;
-
-    const RPApdf = `${folderPathPart1}/${encodeURIComponent('RPA System.pdf')}`;
-    const RPAdocx = `${folderPathPart1}/${encodeURIComponent('RPA System.docx')}`;
-
-    const ZeroTrustpdf = `${folderPathPart1}/${encodeURIComponent('Zero Trust Diagram.pdf')}`;
-    const ZeroTrustdocx = `${folderPathPart1}/${encodeURIComponent('Zero Trust Diagram.docx')}`;
-
-
-    document.getElementById('Chatbotpdf').src = Chatbotpdf;
-    document.getElementById('Chatbotdocx').href = Chatbotdocx;
-
-    document.getElementById('Diagrammaticpdf').src = Diagrammaticpdf;
-    document.getElementById('Diagrammaticdocx').href = Diagrammaticdocx;
-
-    document.getElementById('Mobilepdf').src = Mobilepdf;
-    document.getElementById('Mobiledocx').href = Mobiledocx;
-
-    document.getElementById('RPApdf').src = RPApdf;
-    document.getElementById('RPAdocx').href = RPAdocx;
-
-    document.getElementById('ZeroTrustpdf').src = ZeroTrustpdf;
-    document.getElementById('ZeroTrustdocx').href = ZeroTrustdocx;
-
-console.log('Chatbotpdf:', Chatbotpdf);
-console.log('Mobilepdf:', Mobilepdf);
-console.log('RPApdf:', RPApdf);
-console.log('ZeroTrustpdf:', ZeroTrustpdf);
-
-    // FOR PART 2
-    const CaseStudypdf = `${folderPathPart2}/CASE STUDY ANALYSIS.pdf`;
-    const CaseStudydocx = `${folderPathPart2}/CASE STUDY ANALYSIS.docx`;
-
-    document.getElementById('CaseStudypdf').src = CaseStudypdf;
-    document.getElementById('CaseStudydocx').href = CaseStudydocx;
-  
-    /*pdfFiles.forEach(file => {
-    const link = document.createElement('a');
-    link.href = `Files/${encodeURIComponent(folder)}/Part 1 - Diagrammatic Presentation/${encodeURIComponent(file)}`;
-    link.innerText = `Download ${file}`;
-    link.className = 'download-button';
-    link.target = '_blank';
-    document.getElementById('pdf-links-container').appendChild(link);
-    }); */
-
-
-   /* document.getElementById('pdf-frame').src = pdfPath;
-
-    document.getElementById('word-link').href = docxPath;
-    document.getElementById('word-link').innerText = "Download Word Document";
-    
-    document.getElementById('pdf-link').href = pdfPath;
-    document.getElementById('pdf-link').innerText = "Download PDF Document"; 
-    
-
-    <div class="doc-viewer">
-  <iframe id="pdf-frame class="doc-frame"></iframe>
-  <a id="word-link" class="download-button" target="_blank">Download Word Document</a>
-  <a id="pdf-link" class="download-button" target="_blank" download>Download PDF Document</a>
-</div>
-
-<div id="pdf-links-container"></div>
-
-*/
-  
-
-</script>
-
 
 
 <body>
@@ -129,10 +40,20 @@ console.log('ZeroTrustpdf:', ZeroTrustpdf);
 
 <h1>Software Development: Methods and Standards</h1>
 
+<p>This page contains all three parts of the project. In this project, we explored three hypothetical software development initiatives for a banking company:<br><br>
+  1. An AI-powered chatbot designed to assist customers<br>
+  2. A mobile application tailored for customer use<br>
+  3. A Robotic Process Automation (RPA) system intended to streamline backend operations<br><br>
+  
+  The primary aim of this project is to examine the ethical and financial implications involved in software development, as well as to explore effective strategies for implementing robust security measures throughout the development process.
+</p>
+
 <button class="accordion-button" data-target="section1">Part 1 - Diagrammatic Presentation</button>
 <div id="section1" class="accordion-content">
 
+  <p  style="color: black">Below are development method diagrams for all three projects, aswell as a zero-trust diagram. Each also have a description attached.</p>
   <div style="display: flex; flex-direction: column; align-items: center;">
+
     <div style="display: flex; flex-wrap: wrap; gap: 2em; justify-content: center;">
       <div style="flex: 1 1 45%; min-width: 300px; margin-bottom: 2.5em;">
         <h2 style="color: black; text-align: center;">AI Chatbot</h2>
@@ -158,6 +79,7 @@ console.log('ZeroTrustpdf:', ZeroTrustpdf);
         <a id="ZeroTrustdocx" class="download-button" download style="display: block; text-align: center;">Download .docx version</a>
       </div>
     </div>
+
     <div style="margin-top: 2em; display: flex; justify-content: center; gap: 1em;">
       <a id="Diagrammaticdocx" class="download-button" download style="text-align: center;">Download .docx version</a>
       <a id="Diagrammaticpdf" class="download-button" download style="text-align: center;">Download .pdf version</a>
@@ -168,7 +90,7 @@ console.log('ZeroTrustpdf:', ZeroTrustpdf);
 </div>
 
 
-<button class="accordion-button" data-target="section2">Part 2</button>
+<button class="accordion-button" data-target="section2">Part 2 - Case Study</button>
 <div id="section2" class="accordion-content">
 
   <div style="flex: 1 1 45%; min-width: 700px; margin-bottom: 2.5em;">
@@ -181,10 +103,25 @@ console.log('ZeroTrustpdf:', ZeroTrustpdf);
 
 
 
-<button class="accordion-button" data-target="section3">Part 3</button>
+<button class="accordion-button" data-target="section3">Part 3 - Structured Application</button>
 <div id="section3" class="accordion-content">
-  <p>Content for RPA System goes here.</p>
+
+  <div style="flex: 1 1 45%; min-width: 700px; margin-bottom: 2.5em;">
+        <h2 style="color: black; text-align: center;">Structured Application</h2>
+        <iframe id="StructuredApplicationpdf" class="doc-frame" title="Structured Application"></iframe>
+        <a id="StructuredApplicationdocx" class="download-button" download style="display: block; text-align: center;">Download .docx version</a>
+  </div>
+
+  <p style="color: black">Below are links to all images in the structured application above</p>
+  <div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(2, auto); gap: 2em; justify-items: center; margin-bottom: 2em;">
+    <div id="RiskManagementDiagram"></div>
+    <div id="MultiManagementDiagram"></div>  
+    <div id="AI-image-gallery"></div>
+    <div id="Mobile-image-gallery"></div>
+    <div id="RPA-image-gallery"></div>
+  </div>
 </div>
+  
 
 
 
@@ -231,10 +168,84 @@ console.log('ZeroTrustpdf:', ZeroTrustpdf);
     document.getElementById('CaseStudypdf').src = CaseStudypdf;
     document.getElementById('CaseStudydocx').href = CaseStudydocx;
 
-    console.log('Chatbotpdf:', Chatbotpdf);
-    console.log('Mobilepdf:', Mobilepdf);
-    console.log('RPApdf:', RPApdf);
-    console.log('ZeroTrustpdf:', ZeroTrustpdf);
+
+    // FOR PART 3
+    const StructuredApplicationpdf = `${folderPathPart3}/Structured application.pdf`;
+    const StructuredApplicationdocx = `${folderPathPart3}/Structured application.docx`;
+    document.getElementById('StructuredApplicationpdf').src = StructuredApplicationpdf;
+    document.getElementById('StructuredApplicationdocx').href = StructuredApplicationdocx;
+
+    // Helper to create a group of links for images
+    function createImageLinks(container, folder, prefix, count) {
+      const groupDiv = document.createElement('div');
+      groupDiv.style.marginBottom = '1.5em';
+      for (let i = 1; i <= count; i++) {
+      let found = false;
+      ['jpg', 'jpeg'].forEach(ext => {
+        if (found) return;
+        const url = `${folderPathPart3}/${folder}/${prefix} ${i}.${ext}`;
+        // Check if the image exists by trying to load it
+        const img = new Image();
+        img.onload = function() {
+        if (!found) {
+          const link = document.createElement('a');
+          link.href = url;
+          link.textContent = `${prefix} ${i}.${ext}`;
+          link.target = '_blank';
+          link.style.display = 'block';
+          link.style.margin = '0.3em 0';
+          groupDiv.appendChild(link);
+          found = true;
+        }
+        };
+        img.onerror = function() {};
+        img.src = url;
+      });
+      }
+      container.appendChild(groupDiv);
+    }
+
+
+    // for risk and tenant diagrams
+    // Add Risk Management Diagram image link
+    const riskDiagramUrl = `${folderPathPart3}/Risk Management Diagram.jpg`;
+    const riskDiagramLink = document.createElement('a');
+    riskDiagramLink.href = riskDiagramUrl;
+    riskDiagramLink.textContent = 'Risk Management Diagram.jpg';
+    riskDiagramLink.target = '_blank';
+    riskDiagramLink.style.display = 'block';
+    riskDiagramLink.style.margin = '0.3em 0';
+    
+
+    const MutliDiagramUrl = `${folderPathPart3}/Multi - tenant Diagram.jpg`;
+    const MutliDiagramLink = document.createElement('a');
+    MutliDiagramLink.href = MutliDiagramUrl;
+    MutliDiagramLink.textContent = 'Multi - tenant Diagram.jpg';
+    MutliDiagramLink.target = '_blank';
+    MutliDiagramLink.style.display = 'block';
+    MutliDiagramLink.style.margin = '0.3em 0';
+    
+
+    const MultiManagementDiagram = document.getElementById('MultiManagementDiagram')
+    const RiskManagementDiagram = document.getElementById('RiskManagementDiagram')
+    const AIgallery = document.getElementById('AI-image-gallery');
+    const Mobilegallery = document.getElementById('Mobile-image-gallery');
+    const RPAgallery = document.getElementById('RPA-image-gallery');
+
+    RiskManagementDiagram.appendChild(riskDiagramLink);
+    MultiManagementDiagram.appendChild(MutliDiagramLink);
+
+    createImageLinks(AIgallery, 'AI', 'AI graph', 6);
+    createImageLinks(Mobilegallery, 'Mobile', 'Mobile graph', 4);
+    createImageLinks(RPAgallery, 'RPA', 'RPA graph', 6);
+
+    // If you have Mobile and RPA galleries, uncomment and add their containers in HTML
+    // const Mobilegallery = document.getElementById('Mobile-image-gallery');
+    // createImageLinks(Mobilegallery, 'Mobile', 'Mobile graph', 4);
+
+    // const RPAgallery = document.getElementById('RPA-image-gallery');
+    // createImageLinks(RPAgallery, 'AI', 'AI graph', 6);
+    
   });
 
   document.querySelectorAll('.accordion-button').forEach(btn => {
