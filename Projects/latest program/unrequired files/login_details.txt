@@ -1,3 +1,0 @@
-morgan,hello
-jacob,goodbye
-becky,hola

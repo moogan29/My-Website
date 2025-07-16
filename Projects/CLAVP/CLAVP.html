@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>QSPS Page</title>
+  <link rel="stylesheet" href="CLAVPStyleSheet.css"> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</head>
+
+<!-- actual text of page -->
+<body>
+
+    
+    <h1 style="font-size: 120px">Classroom Availability Project (CLAVP)</h1><br><br>
+
+    <a href="../../index.html" class="back-button">← Back</a>
+
+  
+  
+  <div class="doc-viewer">
+  <div class="doc-info">
+    <div class="doc-container">
+      <iframe src="Development Documentation.pdf#zoom=110" class="doc-frame"></iframe>
+
+      <div style="text-align: center;">
+        <a id="Documentationpdf" class="download-button" download>
+          Development Documentation.pdf
+        </a>
+      </div>
+    </div>
+
+    <p class="Text">
+      Welcome to my A-level Computer Science project! I worked on this project for the bettermost of the 2nd year of my A-levels (2019).
+       The project allows users to check the availability of classrooms in a school. It includes features such as booking rooms, checking room availability, and managing bookings. The program is designed to be user-friendly and efficient, making it easy for staff to find available classrooms.
+        I got the idea for the project due to my school being affected by the COVID-19 pandemic, which led to a need for better management. The program is built using Python in IDLE and the main library used for the GUI (Graphical User interface) is named Tkinter for easy interaction.
+       The program is specifialised for my secondary school only, and I even made enquires for it to be tested in real time by staff at the school. 
+      <br>
+      If you want to download the entire project, please selecte the button here: 
+    <button onclick="downloadAllFiles()" class="download-button">Download All Code Files</button>
+      <br><br>
+      The PDF on the left consists of documenting all project analysis, design, development and testing. From detecting a problem to
+      presenting and developing a solution , then finally testing it. 
+      <br>
+      The project has six different python files named RoomID, BookID, FreeRooms, StaffID, choose_own_dates and experimenting.  the first 4 listed
+      are for chandling a specific database each. When the program is first ran by running the experimenting file, 4 databases are created. 
+      These all hold all the data the system uses. 
+      <br>
+      The reaons for the multiple python files was to counter the simple layout of the code in the IDLE editor, and keep the multiple functions of the program
+      separate. The experimenting file is the main file that runs the program, and it is where the GUI is created and all the other python files are called. 
+      <br>
+      <br>
+      At the time, I was fascinated by databases and wanted to create a program capable of managing a large volume of data effectively. However, I also wanted to work within an environment I was comfortable with, so I chose to stick with IDLE.
+      Naturally, this required me to learn a great deal about databases and how to integrate them effectively with Python, which turned out to be a valuable learning experience — and it also led me to discover the world of SQL.
+      Nowadays, I’m familiar with many other languages and environments that would be more suitable for a project like this, such as Java and C#. 
+      While Python was excellent for rapid prototyping and getting started quickly, its lack of static typing, performance optimization, and native GUI support made it less ideal for scaling the project further.
+      <br>
+      <br>
+      Looking back at this project, it's interesting to see how much I’ve improved over the years. It highlights inefficiencies, a lack of structure, and security issues that may have eluded me at the time.
+      Additionally, I can see how much my ability to plan and design a project has developed—this was the first time I had to approach a project with extensive planning, which inevitably impacted the quality of the code and the overall outcome."
+      However, I am still proud of the project as it was my first major program I planned and developed over a long period of time. 
+      I hope one day to come back and improve it. 
+    </p>
+  </div>
+</div>
+
+
+<br><br><br>
+<div class="grid-container">
+
+
+  <div class="code-card">
+    <h2>BookID.py</h2>
+    <pre id="code-block1">Loading...</pre>
+    <a id="BookIDpy" class="download-button" download>BookID.py download</a>
+  </div>
+
+
+  <div class="code-card">
+    <h2>choose_own_dates.py</h2>
+    <pre id="code-block2">Loading...</pre>
+    <a id="choose_own_datespy" class="download-button" download>choose_own_dates.py download</a>
+  </div>
+
+
+  <div class="code-card">
+    <h2>experimenting.py</h2>
+    <pre id="code-block3">Loading...</pre>
+    <a id="experimentingpy" class="download-button" download>experimenting.py download</a>
+  </div>
+
+
+  <div class="code-card">
+    <h2>FreeRooms.py</h2>
+    <pre id="code-block4">Loading...</pre>
+    <a id="FreeRoomspy" class="download-button" download>FreeRoomsID.py download</a>
+  </div>
+
+
+  <div class="code-card">
+    <h2>RoomID.py</h2>
+    <pre id="code-block5">Loading...</pre>
+    <a id="RoomIDpy" class="download-button" download>RoomID.py download</a>
+  </div>
+
+
+  <div class="code-card">
+    <h2>StaffID.py</h2>
+    <pre id="code-block6">Loading...</pre>
+    <a id="StaffIDpy" class="download-button" download>StaffIDpy.py download</a>
+  </div>
+
+</div>
+
+      
+
+
+
+
+<!-- ESSAY AND DOWNLOAD BUTTONS
+  <div class="doc-viewer">
+  <!-- <iframe src="Quantum Simulation of Physical Systems.pdf" class="doc-frame"></iframe> -->
+  <!-- <a href="Quantum Simulation of Physical Systems.docx" download class="download-button">Download .docx</a>
+  <a href="Quantum Simulation of Physical Systems.pdf" download class="download-button">Download .pdf</a>
+  </div> -->
+
+
+
+<!-- BELOW THE ESSAY SECTION -->
+    <!-- <h2 class="Text">
+      Below, you will find folders containing the fully developed Python scripts and the graphs 
+      generated included in my essay as results. Overall there were 7 seperate python scripts, and 78 graphs. 
+    </h2>
+ -->
+<!-- <h2 class="Text">
+      TEXT
+    </h2> -->
+
+
+    <!-- RESULTS BUTTONS -->
+    <!-- <div class="XY-BLOCH-columns-container">
+   -->
+  <!-- Left Column -->
+  <!-- <div class="column">
+    <h2 class="column-title">XY Graphs</h2>
+    <a class="bttn" href="ResultsViewer.html?folder=Probability%20of%20Excited%20State%20(neg_i_state)">Probability of Excited State |-i> (neg_i_state)</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Probability%20of%20Excited%20State%20(neg_state)">Probability of Excited State |-> (neg_state)</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Probability%20of%20Excited%20State%20(init1)">Probability of Excited State |1> (init1)</a>
+  </div>
+
+
+
+  <!-- Right Column -->
+  <!-- <div class="column">
+    <h2 class="column-title">Bloch Spheres</h2>
+    <a class="bttn" href="ResultsViewer.html?folder=Bloch%20Sphere%20Hamiltonian-X%20driven%20Rabi%20Oscillations">Bloch Sphere Hamiltonian-X driven Rabi Oscillations</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Bloch%20Sphere%20Hamiltonian-Y%20driven%20Rabi%20Oscillations">Bloch Sphere Hamiltonian-Y driven Rabi Oscillations</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Bloch%20Sphere%20Hamiltonian-Z%20driven%20Rabi%20Oscillations">Bloch Sphere Hamiltonian-Z driven Rabi Oscillations</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Bloch%20Sphere%206-single%20Qubits">Bloch Sphere 6-single Qubits</a>
+  </div>
+
+</div> -->
+ 
+
+
+</body>
+
+<script>
+
+const Documentationpdf = 'Development Documentation.docx';
+document.getElementById('Documentationpdf').href = Documentationpdf;
+
+const BookIDpy = 'BookID.py';
+document.getElementById('BookIDpy').href = BookIDpy;
+
+const choose_own_datespy = 'choose_own_dates.py';
+document.getElementById('choose_own_datespy').href = choose_own_datespy;
+
+const experimentingpy = 'experimenting.py';
+document.getElementById('experimentingpy').href = experimentingpy;
+
+const FreeRoomspy = 'FreeRooms.py';
+document.getElementById('FreeRoomspy').href = FreeRoomspy;
+
+const StaffIDpy = 'StaffID.py';
+document.getElementById('StaffIDpy').href = StaffIDpy;
+
+const RoomIDpy = 'RoomID.py';
+document.getElementById('RoomIDpy').href = RoomIDpy;
+
+</script>
+
+
+
+<script>
+  const files = [
+    { name: 'BookID.py', container: 'code-block1' },
+    { name: 'choose_own_dates.py', container: 'code-block2' },
+    { name: 'experimenting.py', container: 'code-block3' },
+    { name: 'FreeRooms.py', container: 'code-block4' },
+    { name: 'RoomID.py', container: 'code-block5' },
+    { name: 'StaffID.py', container: 'code-block6' }
+  ];
+
+  files.forEach(({ name, container }) => {
+    fetch(name)
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.text();
+      })
+      .then(code => {
+        const preElement = document.getElementById(container);
+        preElement.textContent = code;
+      })
+      .catch(error => {
+        const preElement = document.getElementById(container);
+        preElement.textContent = `Failed to load ${name}`;
+        console.error(`Error loading ${name}:`, error);
+      });
+  });
+</script>
+
+
+<script>
+  async function downloadAllFiles() {
+    const zip = new JSZip();
+    const folder = zip.folder("CLAVP_Code");
+
+    const files = [
+      "BookID.py",
+      "choose_own_dates.py",
+      "experimenting.py",
+      "FreeRooms.py",
+      "RoomID.py",
+      "StaffID.py",
+      //"BookID.db",
+      //"FreeRooms.db",
+      "NEW_freeroomdata2.txt",
+      //"RoomID.db",
+      //"StaffID.db",
+      "README.txt"
+    ];
+
+    for (const file of files) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`Failed to fetch ${file}`);
+        const content = await response.text();
+        folder.file(file, content);
+      } catch (err) {
+        console.error(`Error adding ${file}:`, err);
+      }
+    }
+
+    zip.generateAsync({ type: "blob" })
+      .then(blob => {
+        saveAs(blob, "CLAVP_Code_Files.zip");
+      });
+  }
+</script>
+
+
+
+</html>
+
