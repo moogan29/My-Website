@@ -153,5 +153,17 @@ nav {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
+/*
+* {
+  border: 1px solid red !important;
+}
+*/
 
+.avatar {
+  width: 600px;
+  border-radius: 50%;
+}
