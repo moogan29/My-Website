@@ -23,15 +23,15 @@
         My journey has led me to explore the fascinating world of quantum computing, where I combine my love for coding with the mysteries of quantum mechanics.
       </h2>
       <h2 class="Text">
-        This website is a space for me to share my projects and ideas - a reflection of my journey as a curious learner. 
+        I personally created this website to serve as a platform to introduce myself and showcase my academic projects and ideas.- a reflection of my journey as a curious learner. 
         While I’m still early in my path and have much to learn, it’s that very gap in knowledge that fuels my passion and drive.
       </h2>
       <h2 class="Text">
         Below are two buttons: <br>
 
-      Projects — Explore a collection of my past work, ranging from ethical analyses of hypothetical software to quantum simulations and machine learning projects. <br>
+      Projects - Explore a collection of my past work, ranging from ethical analyses of hypothetical software to quantum simulations and machine learning projects. <br>
 
-        About Me — Learn more about my background, academic credentials, future ideas and projects, contact details, travel experiences, hobbies, and more.
+        About Me - More about my background, academic credentials, future ideas and projects, contact details, travel experiences, hobbies, and more.
       </h2>
       <h2 class="Text">
         (If the website looks a bit clunky, I apologise I am still building it!)
@@ -57,29 +57,38 @@
 
 <script>
   function loadPageContent(filePath, cssPath) {
-    fetch(filePath)
-      .then(response => response.text())
-      .then(html => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const content = doc.querySelector('body').innerHTML;
+  sessionStorage.setItem('lastLoadedContent', JSON.stringify({ filePath, cssPath }));
 
-        const container = document.getElementById('dynamic-content');
-        container.innerHTML = content;
+  fetch(filePath)
+    .then(response => response.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const content = doc.querySelector('body').innerHTML;
 
-        // Scroll to the container AFTER content is added
-        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const container = document.getElementById('dynamic-content');
+      container.innerHTML = content;
 
-        // Dynamically add the CSS if not already present
-        if (!document.querySelector(`link[href="${cssPath}"]`)) {
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = cssPath;
-          document.head.appendChild(link);
-        }
-      })
-      .catch(err => console.error('Error loading page:', err));
+      container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      if (!document.querySelector(`link[href="${cssPath}"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = cssPath;
+        document.head.appendChild(link);
+      }
+    })
+    .catch(err => console.error('Error loading page:', err));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = sessionStorage.getItem('lastLoadedContent');
+  if (saved) {
+    const { filePath, cssPath } = JSON.parse(saved);
+    loadPageContent(filePath, cssPath);
   }
+});
+
 </script>
 
 

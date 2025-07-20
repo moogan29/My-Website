@@ -167,3 +167,34 @@ html {
   width: 600px;
   border-radius: 50%;
 }
+
+
+/*  BACK BUTTON TO HOMEPAGE ---------------------------------------------------*/
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* or right: 20px; for top-right corner */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 12px;
+  background-color: #f1c40f;
+  color: #003d2d;
+  transition: background-color 0.3s;
+}
+
+#image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* center the whole image gallery */
+  gap: 10px 15px;
+}
+
+
+#image-gallery img {
+  height: auto;         /* maintain aspect ratio */
+  width: auto;          /* natural width */
+  max-width: 600px;     /* don't overflow container */
+  max-height: 600px;    /* optional limit to prevent huge tall images */
+  object-fit: contain;  /* keep entire image visible */
+}

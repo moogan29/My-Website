@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travlling Photos</title>
+  <link rel="stylesheet" href="HomePageStyle.css" />
+</head>
+
+  <body>
+  
+    <br>
+
+  <a href="index.html" class="back-button">← Back</a>
+
+  <h1 id="pageTitle" style="color: #ffffff;"></h1>
+
+  <p id="location-text" style="color: #ffffff;"></p>
+
+  <div id="image-gallery"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const folder = params.get('folder');
+
+      const imageCounts = {
+        'images_and_docs/Austria': 14,
+        'Probability of Excited State (neg_i_state)': 18,
+        'Probability of Excited State (neg_state)': 18,
+        'Bloch Sphere Hamiltonian-X driven Rabi Oscillations': 6,
+        'Bloch Sphere Hamiltonian-Y driven Rabi Oscillations': 6,
+        'Bloch Sphere Hamiltonian-Z driven Rabi Oscillations': 6,
+        'Bloch Sphere 6-single Qubits': 6,
+      };
+
+      const pageTitle = document.getElementById('pageTitle'); // <-- match the HTML id exactly
+
+
+  // 🧠 Extract a display name (remove "images_and_docs/" and decode URI parts)
+  if (folder && pageTitle) {
+    const cleanName = decodeURIComponent(folder.replace(/^.*\//, ''));
+    pageTitle.textContent = cleanName;
+  }
+
+
+const locationText = document.getElementById('location-text');
+
+if (folder && pageTitle) {
+  const cleanName = decodeURIComponent(folder.replace(/^.*\//, ''));
+  pageTitle.textContent = cleanName;
+
+  if (cleanName === 'Austria') {
+  locationText.innerHTML = `
+ <p>
+  I travelled to Austria in early 2018 on a school ski trip. My teachers guaranteed they could teach us in 5 days. I did not believe them, but I was proven wrong. It was truly an amazing experience.
+</p>
+<p>
+  The weather was (obviously) cold, which I was a fan of. I have always preferred colder climates over hotter ones. Another thing I noticed a lot was that the food there was incredibly salty. Not that I disliked it or found it inedible — in fact, many times my friends who came on the trip ended up giving me their portions because of the salt.
+</p>
+<p>
+  We stayed in a small village right next to the mountains, and it was lovely to see classic Austrian architecture, though I missed the opportunity to photograph any. Most probably due to how busy the days were.
+</p>
+
+  `;
+}
+    } else if (cleanName === 'Probability of Excited State (neg_i_state)') {
+      locationText.textContent = 'Quantum simulations: Probability of Excited State (neg_i_state)';
+    } else if (cleanName === 'Bloch Sphere Hamiltonian-X driven Rabi Oscillations') {
+      locationText.textContent = 'Visualization of Rabi Oscillations around X-axis';
+    } else {
+      locationText.textContent = `Currently viewing: ${cleanName}`;
+    }
+  
+
+
+  
+
+      const count = imageCounts[folder] || 0;
+      const gallery = document.getElementById('image-gallery');
+
+      if (!gallery || !folder || count === 0) {
+        console.warn('No valid folder or images to display');
+        return;
+      }
+
+      for (let i = 1; i <= count; i++) {
+        const img = document.createElement('img');
+        img.src = `${folder}/image${i}.jpg`;
+        img.alt = `${folder} image ${i}`;
+        img.style.width = "100%";
+        img.style.maxWidth = "800px";
+        img.style.margin = "60px 10px"; // Bigger gap
+
+        gallery.appendChild(img);
+      }
+    });
+  </script>
+</body>
+
+</html>
