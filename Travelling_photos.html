@@ -13,8 +13,9 @@
 
   <a href="index.html" class="back-button">← Back</a>
 
-  <h1 id="pageTitle" style="color: #ffffff;"></h1>
+  <h1 id="pageTitle" style="color: #ffffff; font-size: 80px;"></h1>
 
+ 
   <p id="location-text" style="color: #ffffff;"></p>
 
   <div id="image-gallery"></div>
@@ -26,12 +27,9 @@
 
       const imageCounts = {
         'images_and_docs/Austria': 14,
-        'Probability of Excited State (neg_i_state)': 18,
-        'Probability of Excited State (neg_state)': 18,
-        'Bloch Sphere Hamiltonian-X driven Rabi Oscillations': 6,
-        'Bloch Sphere Hamiltonian-Y driven Rabi Oscillations': 6,
-        'Bloch Sphere Hamiltonian-Z driven Rabi Oscillations': 6,
-        'Bloch Sphere 6-single Qubits': 6,
+        'images_and_docs/Estonia': 15,
+        'images_and_docs/Germany': 9,
+  
       };
 
       const pageTitle = document.getElementById('pageTitle'); // <-- match the HTML id exactly
@@ -46,12 +44,14 @@
 
 const locationText = document.getElementById('location-text');
 
+const flagContainer = document.getElementById('flag-container');
+
 if (folder && pageTitle) {
   const cleanName = decodeURIComponent(folder.replace(/^.*\//, ''));
   pageTitle.textContent = cleanName;
 
   if (cleanName === 'Austria') {
-  locationText.innerHTML = `
+  locationText.innerHTML =`
  <p>
   I travelled to Austria in early 2018 on a school ski trip. My teachers guaranteed they could teach us in 5 days. I did not believe them, but I was proven wrong. It was truly an amazing experience.
 </p>
@@ -61,18 +61,114 @@ if (folder && pageTitle) {
 <p>
   We stayed in a small village right next to the mountains, and it was lovely to see classic Austrian architecture, though I missed the opportunity to photograph any. Most probably due to how busy the days were.
 </p>
-
   `;
-}
-    } else if (cleanName === 'Probability of Excited State (neg_i_state)') {
-      locationText.textContent = 'Quantum simulations: Probability of Excited State (neg_i_state)';
-    } else if (cleanName === 'Bloch Sphere Hamiltonian-X driven Rabi Oscillations') {
-      locationText.textContent = 'Visualization of Rabi Oscillations around X-axis';
-    } else {
+
+  // Apply Austrian flag as background
+    pageTitle.style.backgroundImage = "url('images_and_docs/Austria/Flag.png')";
+    pageTitle.style.backgroundSize = "cover"; // or "contain"
+    pageTitle.style.backgroundRepeat = "no-repeat";
+    pageTitle.style.backgroundPosition = "center";
+    pageTitle.style.color = "#ffffff";
+    pageTitle.style.padding = "80px";
+    pageTitle.style.textShadow = "2px 2px 6px #000"; // Helps text readability
+  }
+
+  // to put the flag on the side or soemthing
+  //flagContainer.innerHTML = `<img src="images_and_docs/Austria/Flag.png" alt="Austria Flag" style="height: 40px; vertical-align: middle;">`;
+
+    
+    else if (cleanName === 'Estonia') {
+      locationText.innerHTML =`
+ <p>
+  Estonia was definitely one of my favourite places in terms of aesthetics. I travelled there with my parents and grandparents. As someone from a country known for its beautiful old buildings and narrow streets, it was fascinating to see an Eastern European counterpart.
+</p>
+<p>
+  We visited the capital of Estonia, Tallinn.  I loved the cobbled roads, the classic outdoor markets and cafés. And considering it’s a coastal location, I found the warm weather pleasantly surprising.
+</p>
+<p>
+  As some of the photos show, we also visited a distillery outside the city. We were taken into the factory itself and given a tour of the fully automated section. I found this especially fascinating — there’s something profoundly satisfying about watching such precise, mechanical processes in action.
+</p>
+  `;
+
+  // Apply Estonian flag as background
+    pageTitle.style.backgroundImage = "url('images_and_docs/Estonia/Flag.png')";
+    pageTitle.style.backgroundSize = "cover"; // or "contain"
+    pageTitle.style.backgroundRepeat = "no-repeat";
+    pageTitle.style.backgroundPosition = "center";
+    pageTitle.style.color = "#ffffff";
+    pageTitle.style.padding = "80px";
+    pageTitle.style.textShadow = "2px 2px 6px #000"; // Helps text readability
+  }
+
+
+
+
+    else if (cleanName === 'Germany') {
+      locationText.innerHTML =`
+ <p>
+  These limited amount of photos are from Kiel, a northern city in Germany. Unfortinutely I forgot my camera, and my phone died half through the day so my photos of this area are limited.
+</p>
+<p>
+  I remember a georgous beach that came with the city, and we were lucky enough to have a lovely, bright hot day to enjoy it. 
+</p>
+<p>
+  It was a very colourful and vibrant city. Each house was as different colour, and they had finely made statues all over to admire. 
+</p>
+  `;
+
+  // Apply German flag as background
+    pageTitle.style.backgroundImage = "url('images_and_docs/Germany/Flag.png')";
+    pageTitle.style.backgroundSize = "cover"; // or "contain"
+    pageTitle.style.backgroundRepeat = "no-repeat";
+    pageTitle.style.backgroundPosition = "center";
+    pageTitle.style.color = "#ffffff";
+    pageTitle.style.padding = "80px";
+    pageTitle.style.textShadow = "2px 2px 6px #000"; // Helps text readability
+  }
+    
+    
+        else if (cleanName === 'Germany') {
+      locationText.innerHTML =`
+ <p>
+  These limited amount of photos are from Kiel, a northern city in Germany. Unfortinutely I forgot my camera, and my phone died half through the day so my photos of this area are limited.
+</p>
+<p>
+  I remember a georgous beach that came with the city, and we were lucky enough to have a lovely, bright hot day to enjoy it. 
+</p>
+<p>
+  It was a very colourful and vibrant city. Each house was as different colour, and they had finely made statues all over to admire. 
+</p>
+  `;
+
+  // Apply German flag as background
+    pageTitle.style.backgroundImage = "url('images_and_docs/Germany/Flag.png')";
+    pageTitle.style.backgroundSize = "cover"; // or "contain"
+    pageTitle.style.backgroundRepeat = "no-repeat";
+    pageTitle.style.backgroundPosition = "center";
+    pageTitle.style.color = "#ffffff";
+    pageTitle.style.padding = "80px";
+    pageTitle.style.textShadow = "2px 2px 6px #000"; // Helps text readability
+  }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    else {
       locationText.textContent = `Currently viewing: ${cleanName}`;
     }
   
-
+  }
 
   
 
