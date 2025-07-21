@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travlling Photos</title>
+  <link rel="stylesheet" href="HomePageStyle.css" />
+</head>
+
+
+
+  <body>
+  
+    <br>
+
+  <a href="index.html" class="back-button">← Back</a>
+
+  <h1 id="pageTitle" style="color: #ffffff; font-size: 80px;"></h1>
+
+ 
+  <p id="Crystaltext" style="color: #ffffff; width: 1500px;"></p>
+
+    <br>
+
+  <div>
+  <h2 style="color: #ffffff; font-size: 35px; text-decoration: underline;">Book Notes</h2>
+  <div id="image-gallery"></div>
+  </div>
+
+  <h1 style="color: #ffffff; font-size: 80px;">TEXT EXPLAINING BOOK NOTES TO STILL BE ADDED</h1>
+
+  <h1 style="color: #ffffff; font-size: 80px;">PHOTOS OF CRYSTALS TO STILL BE ADDED</h1>
+ 
+
+
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const folder = params.get('folder');
+
+
+
+      // sets the title on the top of the page
+      const pageTitle = document.getElementById('pageTitle'); // <-- match the HTML id exactly
+
+
+  // 🧠 Extract a display name (remove "images_and_docs/" and decode URI parts)
+  if (folder && pageTitle) {
+    const cleanName = decodeURIComponent(folder.replace(/^.*\//, ''));
+    pageTitle.textContent = cleanName;
+  }
+
+
+const Crystaltext = document.getElementById('Crystaltext');
+
+
+
+// sets the text on the page
+if (folder && pageTitle) {
+  const cleanName = decodeURIComponent(folder.replace(/^.*\//, ''));
+  pageTitle.textContent = cleanName;
+
+  if (cleanName === 'Alum') {
+  Crystaltext.innerHTML =`
+<p>
+  These crystals, known as potassium aluminium sulfate, 
+  are a type of double sulfate salt with the chemical formula KAl(SO₄)₂·12H₂O. 
+  They are remarkably easy to grow and are beautifully transparent. This page documents my journey of cultivating alum 
+  crystals, exploring the various factors that influence their growth, and sharing the discoveries I make along the way.
+</p>
+  `;
+ 
+}
+
+    if (cleanName === 'Copper Acetate') {
+  Crystaltext.innerHTML = 'Copper Acetate text'
+  }
+
+
+
+
+  }
+
+  
+
+
+
+// GETS BOOM IMAGE PHOTOS
+      const bookimageCounts = {
+        'Crystal_Pages/Alum': 4,
+        'Crystal_Pages/Copper Acetate': 4,
+    
+      };
+
+      const count = bookimageCounts[folder] || 0;
+      const gallery = document.getElementById('image-gallery');
+
+      if (!gallery || !folder || count === 0) {
+        console.warn('No valid folder or images to display');
+        return;
+      }
+
+      for (let i = 1; i <= count; i++) {
+        const img = document.createElement('img');
+        img.src = `${folder}/bookimage${i}.jpg`;
+        img.alt = `${folder} bookimage ${i}`;
+        img.style.width = "100%";
+        img.style.maxWidth = "800px";
+        img.style.margin = "60px 10px"; // Bigger gap
+
+        gallery.appendChild(img);
+      }
+
+
+
+
+
+
+// GET CRSYTAL PHOTOS
+            const crystalimageCountes = {
+        'Crystal_Pages/Alum': 4,
+        'images_and_docs/Estonia': 15,
+        'images_and_docs/Germany': 9,
+  
+      };
+
+    });
+  </script>
+</body>
+
+</html>
