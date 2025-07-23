@@ -26,20 +26,20 @@
   <br>
  <h2 style="color: #ffffff; font-size: 35px; text-decoration: underline;">Book Notes</h2>
 
-  <div style="display: flex; align-items: flex-start; gap: 40px;">
-    <!-- Left Side: Galleries -->
-    <div style="flex: 6;">
-      <div id="image-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 5px;"></div>
-
-    </div>
-
-    <!-- Right Side: Text -->
-    <div style="flex: 4;">
-   
-        <p id="CrystalTextMain" style="color: #ffffff; width: 800px;"></p>
   
-    </div>
-  </div>
+    <!-- Left Side: Galleries -->
+    <!-- Text section first -->
+<div>
+  <p id="CrystalTextMain" style="color: #ffffff; width: 100%; max-width: 800px; margin: 0 auto 40px auto;"></p>
+</div>
+
+<!-- Images section below -->
+<div id="image-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 1600px; margin: 0 auto;"></div>
+
+
+
+
+  
 
 <div id="button-container" style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;"></div>
 
@@ -77,7 +77,7 @@
         `;
         CrystalTextMain.innerHTML = `
           <h2>
-            On the left are my notes from my books. They record the process, ingredients, and methods for each attempt of growing these crstals. You will see the ideas advancing, and taking ideas from previous attempts to improve the next.
+            Below are my notes from my books. They record the process, ingredients, and methods for each attempt of growing these crstals. You will see the ideas advancing, and taking ideas from previous attempts to improve the next.
             As aswell as the notes, I have included photos at the bottom from each attempt, showing the progress and the results. 
           </h2>
         `;
@@ -106,7 +106,7 @@
     3: 20   // Experiment 3 has 10 images
   },
   'Crystal_Pages/Copper Acetate': {
-    1: 15,  // All 15 images for one experiment
+    1: 8,  // All 15 images for one experiment
   }
 };
 
@@ -115,7 +115,10 @@
 const ExperimentButtonText = {
   'Crystal_Pages/Alum': {
 
+
     1: 'I am afraid no images of this experiment exist, but I have included the notes I took. No crystals were successfully grown.',
+
+
 
     2: `This experiment was the first successful attempt. I changed the concentration and created a total solution of 500ml with 90grams of alum powder.  I set up overall 4 separate containers, they had as follows: <br><br>
 
@@ -130,14 +133,28 @@ const ExperimentButtonText = {
     Test 4: "Blue Vase" - 250ml + blue food colouring <br><br>
 
     Overal Results : all 4 grown crystals of various shapes / sizes . Purple bowl grew the best, interestingly this is the container that the first batch was initally created in. So keep that in mind for future attempts. 
-    Also, the food colouring was unsuccessful, crystals did grow but were transparent and not dyed at all. <br><br>
-    
-    
-    `,
+    Also, the food colouring was unsuccessful, crystals did grow but were transparent and not dyed at all. <br><br>`,
 
-    3: `Final experiment with purified alum and long-term growth monitoring.`,
+
+
+    3: `The third try was to follow experiment higher concentrations, and attempt to dye the crystals.<br>
+    I created a total solution of 600ml with 119 grams of alum powder. I set up overall 3 separate containers, they had as follows: <br><br>
+
+    Test 1: "Pink Bowl" - 250ml + blue food colouring<br>
+    Test 2: "Purple Bowl" - 250ml <br>
+    Test 3: "Jam" - 100ml  <br><br>
+
+    this time they were set in  a cupboard, with the light blocked by paper. It was cooler but still very warm. They were left for 5 days and 14 hours.<br>
+
+    Overal Results : All grew crystals, and the pink bowl crystals were dyed light blue. Not strongly, only faintly.<br><br>
+     The Pink bowl grew the largest crystal.overall 38 grams. <br> 
+     Purple bowl = 26 grams. <br>
+     Jam jar =  11 grams.<br><br>`,
+    
+
 
   },
+  
   'Crystal_Pages/Copper Acetate': {
 
     1: "This experiment grew copper acetate crystals using copper wire and vinegar.",
@@ -205,7 +222,7 @@ if (galleryTwo && Object.keys(experimentMap).length > 0) {
 
     const CystalExperimentNumbers = {
       'Crystal_Pages/Alum': 3,
-      'images_and_docs/Estonia': 15,
+      'Crystal_Pages/Copper Acetate': 1,
       'images_and_docs/Germany': 9,
     };
 
@@ -257,5 +274,6 @@ btn.addEventListener('click', () => {
 </script>
 
 </body>
+
 
 </html>
