@@ -15,118 +15,247 @@
 
   <a href="index.html" class="back-button">← Back</a>
 
-  <h1 id="pageTitle" style="color: #ffffff; font-size: 80px;"></h1>
+  <h1 id="pageTitle" style="color: #ffffff; font-size: 80px; text-decoration: underline;"></h1>
 
  
-  <p id="Crystaltext" style="color: #ffffff; width: 1500px;"></p>
+  <p id="CrystalTextIntro" style="color: #ffffff; width: 1500px;"></p>
 
     <br>
 
-  <div>
-  <h2 style="color: #ffffff; font-size: 35px; text-decoration: underline;">Book Notes</h2>
-  <div id="image-gallery"></div>
+ <div>
+  <br>
+ <h2 style="color: #ffffff; font-size: 35px; text-decoration: underline;">Book Notes</h2>
+
+  <div style="display: flex; align-items: flex-start; gap: 40px;">
+    <!-- Left Side: Galleries -->
+    <div style="flex: 6;">
+      <div id="image-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 5px;"></div>
+
+    </div>
+
+    <!-- Right Side: Text -->
+    <div style="flex: 4;">
+   
+        <p id="CrystalTextMain" style="color: #ffffff; width: 800px;"></p>
+  
+    </div>
   </div>
 
-  <h1 style="color: #ffffff; font-size: 80px;">TEXT EXPLAINING BOOK NOTES TO STILL BE ADDED</h1>
+<div id="button-container" style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;"></div>
 
-  <h1 style="color: #ffffff; font-size: 80px;">PHOTOS OF CRYSTALS TO STILL BE ADDED</h1>
- 
+<div id="experiment-description" style="color: #ffffff; font-size: 20px; margin-top: 20px; text-align: center;"></div>
 
+<div id="image-gallery-two" style="color: #ffffff; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px;"></div>
 
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const folder = params.get('folder');
-
-
-
-      // sets the title on the top of the page
-      const pageTitle = document.getElementById('pageTitle'); // <-- match the HTML id exactly
-
-
-  // 🧠 Extract a display name (remove "images_and_docs/" and decode URI parts)
-  if (folder && pageTitle) {
-    const cleanName = decodeURIComponent(folder.replace(/^.*\//, ''));
-    pageTitle.textContent = cleanName;
-  }
-
-
-const Crystaltext = document.getElementById('Crystaltext');
-
-
-
-// sets the text on the page
-if (folder && pageTitle) {
-  const cleanName = decodeURIComponent(folder.replace(/^.*\//, ''));
-  pageTitle.textContent = cleanName;
-
-  if (cleanName === 'Alum') {
-  Crystaltext.innerHTML =`
-<p>
-  These crystals, known as potassium aluminium sulfate, 
-  are a type of double sulfate salt with the chemical formula KAl(SO₄)₂·12H₂O. 
-  They are remarkably easy to grow and are beautifully transparent. This page documents my journey of cultivating alum 
-  crystals, exploring the various factors that influence their growth, and sharing the discoveries I make along the way.
-</p>
-  `;
- 
-}
-
-    if (cleanName === 'Copper Acetate') {
-  Crystaltext.innerHTML = 'Copper Acetate text'
-  }
-
-
-
-
-  }
+</div>
 
   
+ 
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const folder = params.get('folder');
 
+    const pageTitle = document.getElementById('pageTitle');
+    const CrystalTextIntro = document.getElementById('CrystalTextIntro');
+     const CrystalTextMain = document.getElementById('CrystalTextMain');
 
+    // Set the page title and description
+    if (folder && pageTitle) {
+      const cleanName = decodeURIComponent(folder.replace(/^.*\//, ''));
+      pageTitle.textContent = cleanName;
+      pageTitle.textContent = `${cleanName} crystal`;
 
-// GETS BOOM IMAGE PHOTOS
-      const bookimageCounts = {
-        'Crystal_Pages/Alum': 4,
-        'Crystal_Pages/Copper Acetate': 4,
-    
-      };
-
-      const count = bookimageCounts[folder] || 0;
-      const gallery = document.getElementById('image-gallery');
-
-      if (!gallery || !folder || count === 0) {
-        console.warn('No valid folder or images to display');
-        return;
+      if (cleanName === 'Alum') {
+        CrystalTextIntro.innerHTML = `
+          <h2>
+            These crystals, known as potassium aluminium sulfate, 
+            are a type of double sulfate salt with the chemical formula KAl(SO₄)₂·12H₂O. 
+            They are remarkably easy to grow and are beautifully transparent. This page documents my journey of cultivating alum 
+            crystals, exploring the various factors that influence their growth, and sharing the discoveries I make along the way.
+          </h2>
+        `;
+        CrystalTextMain.innerHTML = `
+          <h2>
+            On the left are my notes from my books. They record the process, ingredients, and methods for each attempt of growing these crstals. You will see the ideas advancing, and taking ideas from previous attempts to improve the next.
+            As aswell as the notes, I have included photos at the bottom from each attempt, showing the progress and the results. 
+          </h2>
+        `;
+      } else if (cleanName === 'Copper Acetate') {
+        CrystalTextIntro.innerHTML = 'Copper Acetate text';
+        CrystalTextMain.innerHTML = 'Copper Acetate text';
       }
+    }
 
-      for (let i = 1; i <= count; i++) {
+    // Image counts
+    const bookimageCounts = {
+      'Crystal_Pages/Alum': 4,
+      'Crystal_Pages/Copper Acetate': 4,
+    };
+
+    const crystalimageCounts = {
+      'Crystal_Pages/Alum': 28,
+      'images_and_docs/Estonia': 15,
+      'images_and_docs/Germany': 9,
+    };
+
+        const experimentImageMap = {
+  'Crystal_Pages/Alum': {
+    1: 0,   // Experiment 1 has 8 images
+    2: 8,  // Experiment 2 has 10 images
+    3: 20   // Experiment 3 has 10 images
+  },
+  'Crystal_Pages/Copper Acetate': {
+    1: 15,  // All 15 images for one experiment
+  }
+};
+
+
+// ADD TEXT TO EACH BUTTON
+const ExperimentButtonText = {
+  'Crystal_Pages/Alum': {
+
+    1: 'I am afraid no images of this experiment exist, but I have included the notes I took. No crystals were successfully grown.',
+
+    2: `This experiment was the first successful attempt. I changed the concentration and created a total solution of 500ml with 90grams of alum powder.  I set up overall 4 separate containers, they had as follows: <br><br>
+
+    Test 1: "Jam jar" - 250ml  <br>
+    Tetst 2: "Purple bowl" - 250ml <br><br>
+
+    As seen in the photos, they are of different sizes and shapes, which I thought would affect the growth .  They were left in a dark, warm room. Due to the current outside summer weather it was left on a simple windowsill with the blinds shut. 
+    This batch was left afor around 24 hours and shown good results, proving that the concentration was sufficient. Next was to see if it was possible to dye the crystals with food colouring. <br>
+    I then created 500ml solution with the same concentration (90 grams) and set up  2 more containers in the exact same environment. <br><br>
+
+    Test 3: "Purple Seal" - 250ml + purple food colouring <br>
+    Test 4: "Blue Vase" - 250ml + blue food colouring <br><br>
+
+    Overal Results : all 4 grown crystals of various shapes / sizes . Purple bowl grew the best, interestingly this is the container that the first batch was initally created in. So keep that in mind for future attempts. 
+    Also, the food colouring was unsuccessful, crystals did grow but were transparent and not dyed at all. <br><br>
+    
+    
+    `,
+
+    3: `Final experiment with purified alum and long-term growth monitoring.`,
+
+  },
+  'Crystal_Pages/Copper Acetate': {
+
+    1: "This experiment grew copper acetate crystals using copper wire and vinegar.",
+
+  }
+};
+
+
+
+    // Load Book Images
+    const bookCount = bookimageCounts[folder] || 0;
+    const gallery = document.getElementById('image-gallery');
+
+    if (gallery && bookCount > 0) {
+      for (let i = 1; i <= bookCount; i++) {
         const img = document.createElement('img');
         img.src = `${folder}/bookimage${i}.jpg`;
         img.alt = `${folder} bookimage ${i}`;
         img.style.width = "100%";
         img.style.maxWidth = "800px";
-        img.style.margin = "60px 10px"; // Bigger gap
-
+        img.style.margin = "5px 10px";
         gallery.appendChild(img);
       }
+    }
 
+    // Load Crystal Images
+const experimentMap = experimentImageMap[folder] || {};
+const galleryTwo = document.getElementById('image-gallery-two');
 
+if (galleryTwo && Object.keys(experimentMap).length > 0) {
+  let imageIndex = 1;
 
+  for (const [experimentNum, imageCount] of Object.entries(experimentMap)) {
+    for (let i = 0; i < imageCount; i++) {
+      const img = document.createElement('img');
+      const jpgSrc = `${folder}/image${imageIndex}.jpg`;
+      const jpegSrc = `${folder}/image${imageIndex}.jpeg`;
 
+      img.src = jpgSrc;
+      img.alt = `${folder} image ${imageIndex}`;
+      img.style.width = "100%";
+      img.style.maxWidth = "800px";
+      img.style.margin = "60px 10px";
+      img.style.display = "none";
 
+      img.dataset.experiment = experimentNum;
 
-// GET CRSYTAL PHOTOS
-            const crystalimageCountes = {
-        'Crystal_Pages/Alum': 4,
-        'images_and_docs/Estonia': 15,
-        'images_and_docs/Germany': 9,
-  
+      img.onerror = () => {
+        img.onerror = null;
+        img.src = jpegSrc;
       };
 
-    });
-  </script>
+      galleryTwo.appendChild(img);
+      imageIndex++;
+    }
+  }
+}
+
+
+
+
+
+
+// CREATE THE NUMBER OF BUTTONS AND IMAGES TO THE BUTTONS
+
+    const CystalExperimentNumbers = {
+      'Crystal_Pages/Alum': 3,
+      'images_and_docs/Estonia': 15,
+      'images_and_docs/Germany': 9,
+    };
+
+
+
+const experimentCount = CystalExperimentNumbers[folder] || 0;
+const buttonContainer = document.getElementById('button-container');
+const buttonTexts = ExperimentButtonText[folder] || {};  
+const descriptionBox = document.getElementById('experiment-description'); 
+
+// Clear existing buttons if any
+buttonContainer.innerHTML = '';
+
+for (let i = 1; i <= experimentCount; i++) {
+  const btn = document.createElement('button');
+  btn.textContent = `Experiment ${i}`;
+  btn.className = 'bttn';
+
+btn.addEventListener('click', () => {
+  // Remove 'active' from all buttons
+  const allButtons = document.querySelectorAll('.bttn');
+  allButtons.forEach(b => b.classList.remove('active'));
+
+  // Add 'active' to clicked button
+  btn.classList.add('active');
+
+  // Hide all images
+  const allImages = document.querySelectorAll('#image-gallery-two img');
+  allImages.forEach(img => img.style.display = 'none');
+
+  // Show selected experiment's images
+  const targetImages = document.querySelectorAll(`#image-gallery-two img[data-experiment='${i}']`);
+  targetImages.forEach(img => img.style.display = 'block');
+
+  // Update description
+  descriptionBox.innerHTML = buttonTexts[i] || 'Description not available.';
+});
+
+
+  buttonContainer.appendChild(btn);
+}
+
+
+
+
+
+
+  });
+</script>
+
 </body>
 
 </html>
