@@ -223,38 +223,55 @@ const ExperimentButtonText = {
       }
     }
 
+
+
+
     // Load Crystal Images
-const experimentMap = experimentImageMap[folder] || {};
-const galleryTwo = document.getElementById('image-gallery-two');
-
-if (galleryTwo && Object.keys(experimentMap).length > 0) {
-  let imageIndex = 1;
-
-  for (const [experimentNum, imageCount] of Object.entries(experimentMap)) {
-    for (let i = 0; i < imageCount; i++) {
-      const img = document.createElement('img');
-      const jpgSrc = `${folder}/image${imageIndex}.jpg`;
-      const jpegSrc = `${folder}/image${imageIndex}.jpeg`;
-
-      img.src = jpgSrc;
-      img.alt = `${folder} image ${imageIndex}`;
-      img.style.width = "100%";
-      img.style.maxWidth = "800px";
-      img.style.margin = "60px 10px";
-      img.style.display = "none";
-
-      img.dataset.experiment = experimentNum;
-
-      img.onerror = () => {
-        img.onerror = null;
-        img.src = jpegSrc;
-      };
-
-      galleryTwo.appendChild(img);
-      imageIndex++;
-    }
+async function fileExists(url) {
+  try {
+    const response = await fetch(url, { method: 'HEAD' });
+    return response.ok;
+  } catch {
+    return false;
   }
 }
+
+(async () => {
+  const experimentMap = experimentImageMap[folder] || {};
+  const galleryTwo = document.getElementById('image-gallery-two');
+
+  if (galleryTwo && Object.keys(experimentMap).length > 0) {
+    let imageIndex = 1;
+
+    for (const [experimentNum, imageCount] of Object.entries(experimentMap)) {
+      for (let i = 0; i < imageCount; i++) {
+        const img = document.createElement('img');
+        const jpgSrc = `${folder}/image${imageIndex}.jpg`;
+        const jpegSrc = `${folder}/image${imageIndex}.jpeg`;
+
+        const finalSrc = (await fileExists(jpgSrc)) ? jpgSrc :
+                         (await fileExists(jpegSrc)) ? jpegSrc : null;
+
+        if (finalSrc) {
+          img.src = finalSrc;
+          img.alt = `${folder} image ${imageIndex}`;
+          img.style.width = "100%";
+          img.style.maxWidth = "800px";
+          img.style.margin = "60px 10px";
+          img.style.display = "none";
+          img.dataset.experiment = experimentNum;
+
+          galleryTwo.appendChild(img);
+        } else {
+          console.warn(`Image not found: image${imageIndex}`);
+        }
+
+        imageIndex++;
+      }
+    }
+  }
+})();
+
 
 
 
