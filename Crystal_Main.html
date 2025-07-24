@@ -224,18 +224,18 @@ const ExperimentButtonText = {
     }
 
 
-
-
-    // Load Crystal Images
 async function fileExists(url) {
   try {
     const response = await fetch(url, { method: 'HEAD' });
     return response.ok;
-  } catch {
+  } catch (err) {
+    console.error('Error checking file:', url, err);
     return false;
   }
 }
 
+
+    // Load Crystal Images
 (async () => {
   const experimentMap = experimentImageMap[folder] || {};
   const galleryTwo = document.getElementById('image-gallery-two');
@@ -246,11 +246,9 @@ async function fileExists(url) {
     for (const [experimentNum, imageCount] of Object.entries(experimentMap)) {
       for (let i = 0; i < imageCount; i++) {
         const img = document.createElement('img');
-        const jpgSrc = `${folder}/image${imageIndex}.jpg`;
         const jpegSrc = `${folder}/image${imageIndex}.jpeg`;
 
-        const finalSrc = (await fileExists(jpgSrc)) ? jpgSrc :
-                         (await fileExists(jpegSrc)) ? jpegSrc : null;
+        const finalSrc = (await fileExists(jpegSrc)) ? jpegSrc : null;
 
         if (finalSrc) {
           img.src = finalSrc;
@@ -271,6 +269,7 @@ async function fileExists(url) {
     }
   }
 })();
+
 
 
 
