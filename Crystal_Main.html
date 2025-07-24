@@ -66,6 +66,9 @@
       pageTitle.textContent = cleanName;
       pageTitle.textContent = `${cleanName} crystal`;
 
+
+
+
       if (cleanName === 'Alum') {
         CrystalTextIntro.innerHTML = `
           <h2>
@@ -81,11 +84,30 @@
             As aswell as the notes, I have included photos at the bottom from each attempt, showing the progress and the results. 
           </h2>
         `;
-      } else if (cleanName === 'Copper Acetate') {
-        CrystalTextIntro.innerHTML = 'Copper Acetate text';
-        CrystalTextMain.innerHTML = 'Copper Acetate text';
+      } 
+      else if (cleanName === 'Copper Acetate') {
+        CrystalTextIntro.innerHTML =`
+          <h2>
+            These Crystals were the first I attempted to grow. They are a type of copper salt, with the chemical formula Cu(CH₃COO)₂·H₂O. They are known for their vibrant blue color and are often used in various chemical experiments.
+            This page documents my journey of cultivating copper acetate crystals, exploring the various factors that influence their growth, and sharing the discoveries I make along the way.
+          </h2>
+          `;
+
+        CrystalTextMain.innerHTML = `
+          <h2>
+            Below are my notes from my books. They record the process, ingredients, and methods for each attempt of growing these crstals. You will see the ideas advancing, and taking ideas from previous attempts to improve the next.
+            As aswell as the notes, I have included photos at the bottom from each attempt, showing the progress and the results. 
+          </h2>
+        `;
       }
     }
+
+
+
+
+
+
+
 
     // Image counts
     const bookimageCounts = {
@@ -93,11 +115,15 @@
       'Crystal_Pages/Copper Acetate': 4,
     };
 
+
     const crystalimageCounts = {
       'Crystal_Pages/Alum': 28,
-      'images_and_docs/Estonia': 15,
-      'images_and_docs/Germany': 9,
+      'Crystal_Pages/Copper Acetate': 8
     };
+
+
+
+
 
         const experimentImageMap = {
   'Crystal_Pages/Alum': {
@@ -106,9 +132,13 @@
     3: 20   // Experiment 3 has 10 images
   },
   'Crystal_Pages/Copper Acetate': {
-    1: 8,  // All 15 images for one experiment
+    1: 0,  
+    2: 8
   }
 };
+
+
+
 
 
 // ADD TEXT TO EACH BUTTON
@@ -157,7 +187,20 @@ const ExperimentButtonText = {
   
   'Crystal_Pages/Copper Acetate': {
 
-    1: "This experiment grew copper acetate crystals using copper wire and vinegar.",
+    1: `The firest try was a failure. The ingredients were not measured, the reaction was slow. I am unsure if it was in the correct environment. No crystrals grew. <br><br>
+    The solution turned blue after one day, but ceased to change after that. <br>
+    Unfortunately, I did not take any photos of this attempt. <br><br>`,
+    
+    2: `The 2nd attempt was still unsuccessful. However I did take some photos and measure the ingredients. <br><br>
+    - 10 grams of copper metal <br>
+    - 125ml of hydrogen peroxide (6%) <br>
+    - 400ml mald vinegar <br><br>
+
+    The reaction was slow, no change after 24 hours. It was left for for 1 week, and the solution turned a light blue, but no crystals formed.
+    `,
+
+
+
 
   }
 };
@@ -222,8 +265,7 @@ if (galleryTwo && Object.keys(experimentMap).length > 0) {
 
     const CystalExperimentNumbers = {
       'Crystal_Pages/Alum': 3,
-      'Crystal_Pages/Copper Acetate': 1,
-      'images_and_docs/Germany': 9,
+      'Crystal_Pages/Copper Acetate': 2,
     };
 
 
