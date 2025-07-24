@@ -245,9 +245,10 @@ async function fileExists(url) {
 
     for (const [experimentNum, imageCount] of Object.entries(experimentMap)) {
       for (let i = 0; i < imageCount; i++) {
-        const img = document.createElement('img');
-        const jpegSrc = `${folder}/image${imageIndex}.jpeg`;
 
+        const img = document.createElement('img');
+
+        const jpegSrc = `${folder}/image${imageIndex}.JPEG`;
         const finalSrc = (await fileExists(jpegSrc)) ? jpegSrc : null;
 
         if (finalSrc) {
