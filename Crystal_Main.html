@@ -15,9 +15,10 @@
 
   <a href="index.html" class="back-button">← Back</a>
 
+  <!-- TITLE AT THE TOP -->
   <h1 id="pageTitle" style="color: #ffffff; font-size: 80px; text-decoration: underline;"></h1>
 
- 
+ <!-- TEXT AT THE TOP OF THE WEBPAGE, ABOVE BOOK NOTES -->
   <p id="CrystalTextIntro" style="color: #ffffff; width: 1500px;"></p>
 
     <br>
@@ -29,6 +30,7 @@
   
     <!-- Left Side: Galleries -->
     <!-- Text section first -->
+     <!-- BOOK NOTES TEXT ABOVE THE IMAGES -->
 <div>
   <p id="CrystalTextMain" style="color: #ffffff; width: 100%; max-width: 800px; margin: 0 auto 40px auto;"></p>
 </div>
@@ -36,18 +38,12 @@
 
 
 <!-- Images section below -->
+ <!-- BOOK NOTE IMAGES -->
 <div id="image-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 1600px; margin: 0 auto;"></div>
 
 
-
-
-  
-
+<!-- EXPERIMENT BUTTONS -->
 <div id="button-container" style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;"></div>
-
-<div id="experiment-description" style="color: #ffffff; font-size: 20px; margin-top: 20px; text-align: center;"></div>
-
-<div id="image-gallery-two" style="color: #ffffff; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px;"></div>
 
 <!-- Grown Crystals Section -->
 <div id="grown-crystals-container" style="margin-top: 60px;">
@@ -56,6 +52,12 @@
   </div>
   <div id="grown-crystals-gallery" style="display: none; color: white; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 0 auto; max-width: 1600px;"></div>
 </div>
+
+<!-- EXPERIMENT BUTTON TEXT -->
+<div id="experiment-description" style="color: #ffffff; font-size: 20px; margin-top: 20px; text-align: center;"></div>
+<!-- EXPERIMENT BUTTON IMAGES  -->
+<div id="image-gallery-two" style="color: #ffffff; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px;"></div>
+
 
 </div>
 
@@ -156,11 +158,11 @@ const ExperimentButtonText = {
   'Crystal_Pages/Alum': {
 
 
-    1: 'I am afraid no images of this experiment exist, but I have included the notes I took. No crystals were successfully grown.',
+    1: '<br>I am afraid no images of this experiment exist, but I have included the notes I took. No crystals were successfully grown.',
 
 
 
-    2: `This experiment was the first successful attempt. I changed the concentration and created a total solution of 500ml with 90grams of alum powder.  I set up overall 4 separate containers, they had as follows: <br><br>
+    2: `<br>This experiment was the first successful attempt. I changed the concentration and created a total solution of 500ml with 90grams of alum powder.  I set up overall 4 separate containers, they had as follows: <br><br>
 
     Test 1: "Jam jar" - 250ml  <br>
     Tetst 2: "Purple bowl" - 250ml <br><br>
@@ -177,7 +179,7 @@ const ExperimentButtonText = {
 
 
 
-    3: `The third try was to follow experiment higher concentrations, and attempt to dye the crystals.<br>
+    3: `<br>The third try was to follow experiment higher concentrations, and attempt to dye the crystals.<br>
     I created a total solution of 600ml with 119 grams of alum powder. I set up overall 3 separate containers, they had as follows: <br><br>
 
     Test 1: "Pink Bowl" - 250ml + blue food colouring<br>
@@ -285,36 +287,62 @@ async function fileExists(url) {
  
 
 // Add functionality to the Grown Crystals button
-document.getElementById('grown-crystals-button').addEventListener('click', async () => {
-  const grownGallery = document.getElementById('grown-crystals-gallery');
-  grownGallery.innerHTML = ''; // Clear previous content
-  grownGallery.style.display = 'grid';
+const grownButton = document.getElementById('grown-crystals-button');
+const grownGallery = document.getElementById('grown-crystals-gallery');
 
-  const grownCrystalImageCounts = {
-    'Crystal_Pages/Alum': 31,
-    'Crystal_Pages/Copper Acetate': 0, // or add actual count if available
-  };
+grownButton.addEventListener('click', async () => {
+  const allButtons = document.querySelectorAll('.bttn');
 
-  const imageCount = grownCrystalImageCounts[folder] || 0;
+  const isAlreadyActive = grownButton.classList.contains('active');
+  allButtons.forEach(b => b.classList.remove('active'));
 
-  if (imageCount === 0) {
-    grownGallery.innerHTML = '<p style="text-align: center; font-size: 18px;">No grown crystal photos available for this crystal type.</p>';
-    return;
-  }
+  // Hide experiment images and clear description
+  const allImages = document.querySelectorAll('#image-gallery-two img');
+  allImages.forEach(img => img.style.display = 'none');
+  descriptionBox.innerHTML = '';
 
-  for (let i = 1; i <= imageCount; i++) {
-    const imgPath = `${folder}/Grown_Crystals/Grown${i}.JPG`;
-    if (await fileExists(imgPath)) {
-      const img = document.createElement('img');
-      img.src = imgPath;
-      img.alt = `Grown Crystal ${i}`;
-      img.style.width = "100%";
-      img.style.maxWidth = "800px";
-      img.style.margin = "20px auto";
-      grownGallery.appendChild(img);
+  if (isAlreadyActive) {
+    grownGallery.style.display = 'none';
+    grownGallery.innerHTML = '';
+    grownButton.classList.remove('active');
+  } else {
+    grownButton.classList.add('active');
+    grownButton.disabled = true;
+    grownGallery.innerHTML = '';
+    grownGallery.style.display = 'grid';
+
+    const grownCrystalImageCounts = {
+      'Crystal_Pages/Alum': 31,
+      'Crystal_Pages/Copper Acetate': 0,
+    };
+
+    const imageCount = grownCrystalImageCounts[folder] || 0;
+
+    if (imageCount === 0) {
+      grownGallery.innerHTML = '<p style="text-align: center; font-size: 18px;">No grown crystal photos available for this crystal type.</p>';
+      grownButton.disabled = false;
+      return;
     }
+
+    for (let i = 1; i <= imageCount; i++) {
+      const imgPath = `${folder}/Grown_Crystals/Grown${i}.JPG`;
+      if (await fileExists(imgPath)) {
+        const img = document.createElement('img');
+        img.src = imgPath;
+        img.alt = `Grown Crystal ${i}`;
+        img.style.width = "100%";
+        img.style.maxWidth = "800px";
+        img.style.margin = "20px auto";
+        grownGallery.appendChild(img);
+      }
+    }
+
+    grownButton.disabled = false;
   }
 });
+
+
+
 
 
 
@@ -342,24 +370,42 @@ for (let i = 1; i <= experimentCount; i++) {
   btn.className = 'bttn';
 
 btn.addEventListener('click', () => {
-  // Remove 'active' from all buttons
   const allButtons = document.querySelectorAll('.bttn');
+
+  // Check if this button is already active
+  const isAlreadyActive = btn.classList.contains('active');
+
+  // Remove 'active' from all buttons
   allButtons.forEach(b => b.classList.remove('active'));
 
-  // Add 'active' to clicked button
-  btn.classList.add('active');
+  if (isAlreadyActive) {
+    // Button was active, so now unselect it: hide images & clear description
+    const allImages = document.querySelectorAll('#image-gallery-two img');
+    allImages.forEach(img => img.style.display = 'none');
+    descriptionBox.innerHTML = '';
+  } else {
+    // Button was not active, activate it and show corresponding images & description
+    btn.classList.add('active');
 
-  // Hide all images
-  const allImages = document.querySelectorAll('#image-gallery-two img');
-  allImages.forEach(img => img.style.display = 'none');
+    // Hide grown crystals section if visible
+    grownGallery.style.display = 'none';
+    grownGallery.innerHTML = '';
+    grownButton.classList.remove('active');
 
-  // Show selected experiment's images
-  const targetImages = document.querySelectorAll(`#image-gallery-two img[data-experiment='${i}']`);
-  targetImages.forEach(img => img.style.display = 'block');
+    // Hide all experiment images
+    const allImages = document.querySelectorAll('#image-gallery-two img');
+    allImages.forEach(img => img.style.display = 'none');
 
-  // Update description
-  descriptionBox.innerHTML = buttonTexts[i] || 'Description not available.';
+    // Show selected experiment's images
+    const targetImages = document.querySelectorAll(`#image-gallery-two img[data-experiment='${i}']`);
+    targetImages.forEach(img => img.style.display = 'block');
+
+    // Update description
+    descriptionBox.innerHTML = buttonTexts[i] || 'Description not available.';
+  }
 });
+
+
 
 
   buttonContainer.appendChild(btn);
