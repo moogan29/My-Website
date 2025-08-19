@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>QSPS Page</title>
+  <link rel="stylesheet" href="CafeStyleSheet.css"> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</head>
+
+<!-- actual text of page -->
+<body>
+
+    
+    <h1 style="font-size: 120px">Marias Cafe</h1><br><br>
+
+    <a href="../../index.html" class="back-button">← Back</a>
+
+  
+  
+ <div class="doc-viewer">
+  <div class="doc-info">
+
+    <!-- LEFT: image + download -->
+    <div class="doc-container">
+      <img src="App_Images/Start.png" class="doc-frame" alt="Cafe App Screenshot">
+      <a id="Documentationpdf" class="download-button" download>
+        Development Documentation.docx
+      </a>
+    </div>
+
+    <!-- RIGHT: text on top, video underneath -->
+    <div class="right-col">
+      <p class="Text">
+  This was one of two projects I began in the third year of my Computer Science degree. The task was to individually develop a mobile 
+  application using Android Studio, for which I chose to create a café app. The application allows users to create an account, 
+  log in, and order food and drinks. I tested and ran the app on a Pixel 9 Pro XL emulator (API 35). THe main documents are HTML,
+  styled with CSS files, and the app itself is written in Java. 
+  <br>
+  If you want to download the entire project, please select the button here: 
+  <a id="Documentationpdf" class="download-button" download>
+    Development Documentation.docx
+  </a>
+  <br><br>
+  I used SQLite to store user data, and overall there are 4 different tables. User data, Order data,  Item Data and Item Catagories Data. THe system comes with inbuilt
+  login data, and is ablwe to add, delete and amend data in all tables. 
+  <br>
+    The PDF on the left consists of documenting all project analysis, design, development and testing. I had added some screenshots of the apps different pages and a short recording of the app in action below. 
+</p>
+
+      <div class="video-container">
+        <h2>Demo Video</h2>
+        <video controls width="800">
+          <source src="App_Recording.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<br><br><br>
+<div class="grid-container">
+
+
+ <img src="App_Images/CreateAccount.png" class="doc-frame" alt="Cafe App Screenshot">
+
+
+<img src="App_Images/Login.png" class="doc-frame" alt="Cafe App Screenshot">
+
+
+<img src="App_Images/MainMenu.png" class="doc-frame" alt="Cafe App Screenshot">
+
+
+ <img src="App_Images/Quantity.png" class="doc-frame" alt="Cafe App Screenshot">
+
+
+ 
+
+
+  
+
+</div>
+
+      
+
+
+
+
+<!-- ESSAY AND DOWNLOAD BUTTONS
+  <div class="doc-viewer">
+  <!-- <iframe src="Quantum Simulation of Physical Systems.pdf" class="doc-frame"></iframe> -->
+  <!-- <a href="Quantum Simulation of Physical Systems.docx" download class="download-button">Download .docx</a>
+  <a href="Quantum Simulation of Physical Systems.pdf" download class="download-button">Download .pdf</a>
+  </div> -->
+
+
+
+<!-- BELOW THE ESSAY SECTION -->
+    <!-- <h2 class="Text">
+      Below, you will find folders containing the fully developed Python scripts and the graphs 
+      generated included in my essay as results. Overall there were 7 seperate python scripts, and 78 graphs. 
+    </h2>
+ -->
+<!-- <h2 class="Text">
+      TEXT
+    </h2> -->
+
+
+    <!-- RESULTS BUTTONS -->
+    <!-- <div class="XY-BLOCH-columns-container">
+   -->
+  <!-- Left Column -->
+  <!-- <div class="column">
+    <h2 class="column-title">XY Graphs</h2>
+    <a class="bttn" href="ResultsViewer.html?folder=Probability%20of%20Excited%20State%20(neg_i_state)">Probability of Excited State |-i> (neg_i_state)</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Probability%20of%20Excited%20State%20(neg_state)">Probability of Excited State |-> (neg_state)</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Probability%20of%20Excited%20State%20(init1)">Probability of Excited State |1> (init1)</a>
+  </div>
+
+
+
+  <!-- Right Column -->
+  <!-- <div class="column">
+    <h2 class="column-title">Bloch Spheres</h2>
+    <a class="bttn" href="ResultsViewer.html?folder=Bloch%20Sphere%20Hamiltonian-X%20driven%20Rabi%20Oscillations">Bloch Sphere Hamiltonian-X driven Rabi Oscillations</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Bloch%20Sphere%20Hamiltonian-Y%20driven%20Rabi%20Oscillations">Bloch Sphere Hamiltonian-Y driven Rabi Oscillations</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Bloch%20Sphere%20Hamiltonian-Z%20driven%20Rabi%20Oscillations">Bloch Sphere Hamiltonian-Z driven Rabi Oscillations</a>
+    <a class="bttn" href="ResultsViewer.html?folder=Bloch%20Sphere%206-single%20Qubits">Bloch Sphere 6-single Qubits</a>
+  </div>
+
+</div> -->
+ 
+
+
+</body>
+
+<script>
+
+const Documentationpdf = 'Mobile Application Development.pdf';
+document.getElementById('Documentationpdf').href = Documentationpdf;
+
+const BookIDpy = 'BookID.py';
+document.getElementById('BookIDpy').href = BookIDpy;
+
+const choose_own_datespy = 'choose_own_dates.py';
+document.getElementById('choose_own_datespy').href = choose_own_datespy;
+
+const experimentingpy = 'experimenting.py';
+document.getElementById('experimentingpy').href = experimentingpy;
+
+const FreeRoomspy = 'FreeRooms.py';
+document.getElementById('FreeRoomspy').href = FreeRoomspy;
+
+const StaffIDpy = 'StaffID.py';
+document.getElementById('StaffIDpy').href = StaffIDpy;
+
+const RoomIDpy = 'RoomID.py';
+document.getElementById('RoomIDpy').href = RoomIDpy;
+
+</script>
+
+
+
+<script>
+  const files = [
+    { name: 'BookID.py', container: 'code-block1' },
+    { name: 'choose_own_dates.py', container: 'code-block2' },
+    { name: 'experimenting.py', container: 'code-block3' },
+    { name: 'FreeRooms.py', container: 'code-block4' },
+    { name: 'RoomID.py', container: 'code-block5' },
+    { name: 'StaffID.py', container: 'code-block6' }
+  ];
+
+  files.forEach(({ name, container }) => {
+    fetch(name)
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.text();
+      })
+      .then(code => {
+        const preElement = document.getElementById(container);
+        preElement.textContent = code;
+      })
+      .catch(error => {
+        const preElement = document.getElementById(container);
+        preElement.textContent = `Failed to load ${name}`;
+        console.error(`Error loading ${name}:`, error);
+      });
+  });
+</script>
+
+
+<script>
+  async function downloadAllFiles() {
+    const zip = new JSZip();
+    const folder = zip.folder("CLAVP_Code");
+
+    const files = [
+      "BookID.py",
+      "choose_own_dates.py",
+      "experimenting.py",
+      "FreeRooms.py",
+      "RoomID.py",
+      "StaffID.py",
+      //"BookID.db",
+      //"FreeRooms.db",
+      "NEW_freeroomdata2.txt",
+      //"RoomID.db",
+      //"StaffID.db",
+      "README.txt"
+    ];
+
+    for (const file of files) {
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`Failed to fetch ${file}`);
+        const content = await response.text();
+        folder.file(file, content);
+      } catch (err) {
+        console.error(`Error adding ${file}:`, err);
+      }
+    }
+
+    zip.generateAsync({ type: "blob" })
+      .then(blob => {
+        saveAs(blob, "CLAVP_Code_Files.zip");
+      });
+  }
+</script>
+
+
+
+</html>
+
