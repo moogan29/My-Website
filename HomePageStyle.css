@@ -46,21 +46,42 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 4rem 2rem;
+
+  /* COLOURED BACKGROUND */
   background: linear-gradient(to right, #ffffff, #f1c40f);
   background-color: #ffffff;
   flex: 1;
 
+
+  /* IMAGE BACKGROUND */
+/*   background: url("images_and_docs/Working_out/Image1.jpg") no-repeat center center;*/
+/*  background-size: cover;   /* make it scale to cover entire hero */
+/*   color: white;             /* adjust text color if needed */
+
+  /* gradient + image together 
+  background:  linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+    url("mages_and_docs/Working_out/Image1.jpg") no-repeat center center;
+  background-size: cover;
+  color: white; */
+
+  
   
 }
 
 .hero-text {
   max-width: 50%;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;  
 }
 
 .hero-text h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
+  color: #003d2d;
+  position: relative;
+  z-index: 2;  
 }
 
 
@@ -124,10 +145,11 @@ nav {
 
 .hero-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;   
   justify-content: space-between;
   padding: 2rem;
   gap: 2rem;
+  position: relative;
 }
 
 .button-row {
@@ -147,6 +169,7 @@ nav {
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.5;
+  color: #003d2d;      
   
 }
 
@@ -205,3 +228,83 @@ html {
   max-height: 600px;    /* optional limit to prevent huge tall images */
   object-fit: contain;  /* keep entire image visible */
 }
+
+
+
+/* Collage layout */
+.collage {
+  position: relative;
+  max-width: min(1100px, 92vw);
+  margin: 3rem auto;
+  margin-left: -350px;  /* adjust the px value as needed */
+  margin-top: -80px;  
+  /* aspect-ratio: 16/9;  remove if you don’t want forced height */
+  background: none;        /* no background */
+  border-radius: 0;        /* no rounded box */
+  box-shadow: none;        /* no inner shadow */
+  overflow: visible;       /* allow photos to “stick out” naturally */
+}
+
+
+/* Each “polaroid” */
+/* make each “print” larger */
+.collage .shot{
+  position: absolute;
+  left: calc(var(--x, 0) * 1%);      /* percentage-based placement */
+  top:  calc(var(--y, 0) * 1%);
+  transform: rotate(var(--r, 0deg));
+  width: clamp(500px, 30vw, 100px);
+  margin: 0;
+  z-index: 1;
+  transition: transform .25s ease, box-shadow .25s ease, z-index .05s;
+  filter: saturate(.95) contrast(1.02);
+}
+
+/* “print” frame look */
+.collage .shot img{
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2; /* optional placeholder ratio */
+  border-radius: 6px;
+  background: #fff;
+  padding: 10px 10px 32px;          /* bottom padding = white polaroid border */
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+/* small caption under the print */
+.collage .shot figcaption{
+  position: absolute;
+  left: 16px; right: 16px; bottom: 8px;
+  font: 600 12px/1.1 "Georgia", "Times New Roman", serif;
+  color: #2b3a2d;
+  text-align: center;
+  pointer-events: none;              /* so dragging still works */
+}
+
+/* hover: bring to front & tilt a touch */
+.collage .shot:hover{
+  z-index: 9;
+  transform: rotate(calc(var(--r, 0deg) + .5deg)) scale(1.06);
+}
+@media (max-width: 900px){
+  .hero-content{
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-text{ max-width: 900px; }     /* let text be full width */
+  .collage{ width: min(92vw, 700px); }
+}
+
+/* Give the collage an actual width so aspect-ratio can compute height */
+.collage{
+  width: clamp(340px, 45vw, 720px);   /* <<< add this */
+  min-height: 500px;                  /* optional safety */
+}
+
+/* (optional) make sure the row has space for it */
+.hero-content{
+  align-items: flex-start;            /* so tall text doesn't vertically center it */
+ 
+}
+
