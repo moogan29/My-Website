@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>4x4 Unitary CNOT Gate</title>
+  <link rel="stylesheet" href="4x4Unitary.css"> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</head>
+
+<!-- actual text of page -->
+<body>
+
+    
+    <h1 style="font-size: 80px">Photonic CNOT Gate (4×4 Unitary Design)</h1><br>
+    <h2 style="font-size: 30px">Silicon Nitride Integrated Design for Linear Optical Quantum Computing</h2><br><br>
+
+    <a href="../../index.html" class="back-button">← Back</a>
+
+  
+  
+  <div class="doc-viewer">
+  <div class="doc-info">
+    <div class="doc-container">
+
+      <iframe src="Photonic 4x4 Unitary CNOT Gate.pdf#zoom=110" class="doc-frame"></iframe>
+
+      <div style="text-align: center;">
+
+        <a href="Photonic 4x4 Unitary CNOT Gate.pdf" download class="download-button">
+          Download Photonic 4x4 Unitary CNOT Gate PDF
+        </a>
+
+      </div>
+    </div>
+
+    <p class="Text">
+  Welcome to my integrated photonics CNOT gate project! This was a group project focused on the design of a silicon nitride photonic CNOT gate for linear optical quantum computing.
+  The aim of the project was to design a proof-of-concept integrated quantum logic gate using on-chip photonic components, including grating couplers, multimode interferometers, and Mach-Zehnder interferometers.
+  <br><br>
+  The project was based around a 4×4 unitary optical circuit operating at a wavelength of 780 nm. 
+  This wavelength was chosen because silicon nitride is well suited to visible and near-visible photonics, and because the 780 nm region is highly relevant to quantum photonic technologies.
+  The overall design used dual-rail encoding, where the logical quantum states are represented by photons travelling through different waveguides.
+  <br><br>
+  My main contribution to the project was the design and optimisation of the grating couplers. 
+  These components allow light to be coupled vertically between an optical fibre and the photonic chip, making them essential for getting light into and out of the device.
+  I used Ansys Lumerical FDTD to model the grating coupler, beginning from an application-gallery structure and then modifying the parameters.
+  <br><br>
+  The optimisation process involved moving from 2D simulations to more realistic 3D simulations. In 2D, 
+  I used parameter sweeps and optimisation procedures to identify promising values for the grating design. However, when moving into 3D, the initial efficiency values were extremely low, 
+  which showed that the issue was not only the numerical parameters, but also the physical geometry of the grating.
+  To solve this, I redesigned the grating from a simple rectangular structure into a wider, curved, cone-shaped grating with a taper between the grating region and the waveguide. 
+  This created a smoother transition for the optical mode and significantly improved the coupling performance.
+  The final grating design achieved a simulated coupling efficiency  (Figure of Merit) of approximately 98.5%
+  <br><br>
+  The wider project also included the design of 50:50 MMIs, 33:66 splitting structures, and Mach-Zehnder interferometers for phase control. Together, these components formed the basis of a post-selected linear optical CNOT gate. 
+  The project was limited to on-chip photonic design, so off-chip propagation and full experimental implementation were not considered.
+  <br><br>
+  Looking back, this project was one of my first major experiences working with integrated quantum photonics and professional photonic simulation software. 
+  It helped me understand how difficult it is to move from theory to fabrication.
+  It also showed me how strongly optical performance depends on fabrication constraints, geometry, material choice, and simulation setup.
+  <br><br>
+  I am proud of this project because I achieved a successful simulation-based design of a complex photonic component.
+  It gave me valuable experience applying coupled-mode theory to a practical photonic design, while also developing my skills with photonic simulation software.
+  <br><br><br>
+</p>
+</div>
+</div>
+
+
+<br><br><br><br>
+<div class="doc-viewer2">
+  <div class="doc-info">
+    <div class="doc-container">
+      <iframe src="Creating the Grating Couplers.pdf#zoom=110" class="doc-frame"></iframe>
+
+      <div style="text-align: center;">
+
+        <a href="Creating the Grating Couplers.pdf" download class="download-button">
+          Download Grating Coupler Notes PDF
+        </a>
+
+      </div>
+    </div>
+
+    <p class="Text">
+ 
+This document contains a set of personal development notes that I created while designing the grating coupler for the photonic CNOT gate project.
+These notes were mainly written for myself during the development process, rather than as a final polished report.
+<br><br>
+They show how I approached the design step by step, including setting up the initial grating coupler model, choosing materials, 
+defining the 780 nm wavelength, estimating starting parameters, and running early 2D simulation sweeps.
+The notes also include my reasoning behind key design choices, such as fibre angle, pitch, duty cycle, etch depth, fibre position, and the transition towards a wider cone-shaped grating structure.
+<br><br>
+I have included them here to give a more honest view of the development process behind the final design, 
+including the assumptions, testing, and practical simulation work that went into building the grating coupler.
+<br><br>
+<a class="bttn" href="ResultsViewer.html?folder=2D_simulation_result_graphs">
+  2D simulation result graphs
+</a>
+<br><br>
+<a class="bttn" href="ResultsViewer.html?folder=3D_simulation_result_graphs">
+  3D simulation result graphs
+</a>
+<br><br>
+<a class="bttn" href="ResultsViewer.html?folder=3D_simulation_Rectangle_Graphs">
+  3D simulation Rectangle result graphs</a>
+<br><br>
+<a class="bttn" href="ResultsViewer.html?folder=Frequency_Monitor_Graphs">
+  Frequency Monitor Graphs</a>
+<br><br><br><br>
+There are current plans to create a more polished report on the 4x4 Unitary project. 
+    </p>
+  </div>
+</div>
+
+
+<br><br><br>
+<div class="grid-container">
+
+  <div class="code-card">
+    <h2>Grating Coupler GDS Layout</h2>
+    <img src="Only_Grating_Coupler_GDS.png" class="project-image">
+    <a href="Only_Grating_Coupler_GDS.png" download class="download-button">Download Only_Grating_Coupler_GDS.png</a>
+  </div>
+
+  <div class="code-card">
+    <h2>50:50 MMI GDS Layout</h2>
+    <img src="Only_5050_MMI.png" class="project-image">
+    <a href="Only_5050_MMI.png" download class="download-button">Download Only_5050_MMI.png</a>
+  </div>
+
+  <div class="code-card">
+    <h2>33:66 MMI GDS Layout</h2>
+    <img src="Only_3366_MMI.png" class="project-image">
+    <a href="Only_3366_MMI.png" download class="download-button">Download Only_3366_MMI.png</a>
+  </div>
+
+  <div class="code-card">
+    <h2>MZI GDS Layout</h2>
+    <img src="Only_MZI.png" class="project-image">
+    <a href="Only_MZI.png" download class="download-button">Download Only_MZI.png</a>
+  </div>
+
+  <div class="code-card">
+    <h2>Full GDS Layout</h2>
+    <img src="Full_GDS.png" class="project-image">
+    <a href="Full_GDS.png" download class="download-button">Download Full_GDS.png</a>
+  </div>
+
+</div>
+
+    
+
+</body>
+</html>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const folder = params.get("folder");
+
+// List your images manually (browser cannot auto-read folders)
+const images = [
+  "DutyCycle1.png",
+  "graph2.png",
+  "graph3.png",
+  "graph4.png"
+];
+
+const gallery = document.getElementById("image-gallery");
+
+images.forEach(img => {
+  const image = document.createElement("img");
+  image.src = `${folder}/${img}`;
+  image.className = "gallery-img";
+  gallery.appendChild(image);
+});
+</script>
+

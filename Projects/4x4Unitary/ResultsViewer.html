@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>QSPS Page</title>
+  <link rel="stylesheet" href="4x4Unitary.css"> 
+</head>
+
+
+<!-- gets title, images and code into variables -->
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const folder = params.get('folder');
+
+      const imageCounts = {
+        '2D_simulation_result_graphs': 7,
+        '3D_simulation_result_graphs': 8,
+        '3D_simulation_Rectangle_Graphs': 16,
+        'Frequency_Monitor_Graphs': 8,
+      };
+
+      const titles = {
+        '2D_simulation_result_graphs': "2D Simulation Result Graphs",
+        '3D_simulation_results_Graphs': "3D Simulation Results Graphs",
+        '3D_simulation_Rectangle_Graphs': "3D Simulation Rectangle Result Graphs",
+         'Frequency_Monitor_Graphs': "Frequency Monitor Graphs"
+      };
+
+      const count = imageCounts[folder] || 0;
+      const title = titles[folder] || "Results";
+
+      document.getElementById('title').innerText = title;
+
+      const gallery = document.getElementById('image-gallery');
+
+      for (let i = 1; i <= count; i++) {
+        const img = document.createElement('img');
+        img.src = `${folder}/graph${i}.png`;
+        img.alt = `${folder} image ${i}`;
+        img.style.width = "100%";
+        img.style.maxWidth = "800px";
+        img.style.margin = "20px 0";
+        gallery.appendChild(img);
+      }
+
+
+    //   Probability of Excited State (neg_i_state)
+    // fetch('${folder}/${folder}.py')
+    fetch(`${folder}/${folder}.py`)
+        .then(response => response.text())
+        .then(data => {
+           // document.getElementById('code-block').textContent = data;
+
+            // Dynamically update the download link
+           // const pyPath = `${folder}/${folder}.py`;
+            //document.getElementById('code-download').href = pyPath;
+        });
+
+
+
+
+    });
+  </script>
+
+
+<body>
+
+<a href="4x4Unitary.html" class="back-button">← Back</a>
+
+<h1 id="title"></h1>
+
+<div class="code-layout">
+
+  <pre id="code-block"></pre>
+
+  <div>
+
+    <h3 class="section-title">
+  A handful of Results Graphs I gathered throughout the project
+</h3>
+
+  </div>
+
+</div>
+
+
+
+<div id="image-gallery"></div>
+
+
+</body>
