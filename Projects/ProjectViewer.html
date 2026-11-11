@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>TEST TEST</title>
+  <title>Results</title>
   <link rel="stylesheet" href="ProjectStylePage.css"> 
 </head>
 
@@ -27,7 +27,12 @@
     };
 
     const title = titles[folder] || "Results";
+
+    // Updates the H1 heading on the page
     document.getElementById('title').innerText = title;
+
+    // Updates the browser tab title
+    document.title = title;
 
 
 
